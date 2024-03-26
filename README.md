@@ -1,1 +1,1 @@
-# mybot4
+# mybot4 futur Gbot
