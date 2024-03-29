@@ -38,11 +38,6 @@ module.exports = {
         )
         .addSubcommand(subcommand =>
             subcommand
-                .setName('owner')
-                .setDescription('Get info about the owner')
-        )
-        .addSubcommand(subcommand =>
-            subcommand
                 .setName('socials')
                 .setDescription('Get the Bot socials')
         )

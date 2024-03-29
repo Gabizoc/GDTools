@@ -14,15 +14,15 @@ module.exports = async (client, interaction, args) => {
 
     if (message.toUpperCase() == "HELP") {
         return client.embed({
-            title: `ℹ️・Level message options`,
-            desc: `These are the level message name options: \n
-            \`{user:username}\` - User's username
-            \`{user:discriminator}\` - User's discriminator
-            \`{user:tag}\` - User's tag
-            \`{user:mention}\` - Mention a user
+            title: `ℹ️・Message de level`,
+            desc: `Message de niveau : \n
+            \`{user:username}\` - Nom du membre
+            \`{user:discriminator}\` - Surnom du membre
+            \`{user:tag}\` - TAG du membre
+            \`{user:mention}\` - Mention du membre
 
-            \`{user:level}\` - Users's level
-            \`{user:xp}\` - Users's xp`,
+            \`{user:level}\` - Level du membre
+            \`{user:xp}\` - XP du membre`,
             type: 'editreply'
         }, interaction)
     }
@@ -32,7 +32,7 @@ module.exports = async (client, interaction, args) => {
             if (data) {
                 Schema.findOneAndDelete({ Guild: interaction.guild.id }).then(() => {
                     client.succNormal({ 
-                        text: `Level message deleted!`,
+                        text: `Message de niveau supprimer`,
                         type: 'editreply'
                     }, interaction);
                 })
@@ -53,7 +53,7 @@ module.exports = async (client, interaction, args) => {
             }
 
             client.succNormal({
-                text: `The level message has been set successfully`,
+                text: `Le message de niveau a bien été configurer !`,
                 fields: [
                     {
                         name: `💬┆Message`,

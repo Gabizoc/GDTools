@@ -21,7 +21,7 @@ module.exports = async (client, interaction, args) => {
     }
 
     if (!isHexColor(color)) return client.errNormal({
-        error: "You did not specify an hex color! Example: ff0000",
+        error: "Ce n'est pas le bon format (HEX couleur), Example : ff0000",
         type: 'editreply'
     }, interaction)
 
@@ -39,10 +39,10 @@ module.exports = async (client, interaction, args) => {
     })
 
     client.succNormal({
-        text: `The embed color has been adjusted successfully`,
+        text: `La couleur de l'embed à bien été change !`,
         fields: [
             {
-                name: `🎨┆New color`,
+                name: `🎨┆Nouvel Couleur !`,
                 value: `#${color}`,
                 inline: true
             },

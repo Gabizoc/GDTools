@@ -7,7 +7,7 @@ module.exports = async (client, interaction, args) => {
         thumbnail: client.user.avatarURL({ size: 1024 }),
         fields: [{
             name: "📃┆Changelogs",
-                value: '15/3/2023 Updated dependencies',
+                value: 'MAJ le 26/3/2024',
                 inline: false,
             },
         ],

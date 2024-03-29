@@ -14,22 +14,22 @@ module.exports = async (client, interaction, args) => {
 
     if (message.toUpperCase() == "HELP") {
         return client.embed({
-            title: `ℹ️・Welcome message options`,
-            desc: `Leave message options: \n
-            \`{user:username}\` - User's username
-            \`{user:discriminator}\` - User's discriminator
-            \`{user:tag}\` - User's tag
-            \`{user:mention}\` - Mention a user
+            title: `ℹ️・Option de message d'au-revoir :`,
+            desc: `Options : \n
+            \`{user:username}\` - Nom du membre
+            \`{user:discriminator}\` - Surnom du membre
+            \`{user:tag}\` - TAG du membre
+            \`{user:mention}\` - Mention du membre
 
-            \`{inviter:username}\` - inviter's username
-            \`{inviter:discriminator}\` - inviter's discriminator
-            \`{inviter:tag}\` - inviter's tag
-            \`{inviter:mention}\` - inviter's mention
-            \`{inviter:invites}\` - inviter's invites
-            \`{inviter:invites:left}\` - inviter's left invites
+            \`{inviter:username}\` - Nom de l'inviteur
+            \`{inviter:discriminator}\` - Surnom de l'inviteur
+            \`{inviter:tag}\` - TAG de l'inviteur
+            \`{inviter:mention}\` - Mention de l'inviteur
+            \`{inviter:invites}\` - Nombre d'invitation de l'inviteur
+            \`{inviter:invites:left}\` - Nombre d'invitation quitter de l'inviteur
             
-            \`{guild:name}\` - Server name
-            \`{guild:members}\` - Server members count`,
+            \`{guild:name}\` - Nom du serveur
+            \`{guild:members}\` - Compteur de membre`,
             type: 'editreply'
         }, interaction)
     }
@@ -41,7 +41,7 @@ module.exports = async (client, interaction, args) => {
                 data.save();
 
                 client.succNormal({
-                    text: `Leave message deleted!`,
+                    text: `Message d'au-revoir supprimer`,
                     type: 'editreply'
                 }, interaction);
             }
@@ -61,7 +61,7 @@ module.exports = async (client, interaction, args) => {
             }
 
             client.succNormal({
-                text: `The leave message has been set successfully`,
+                text: `Le message d'au-revoir à bien été configurer`,
                 fields: [
                     {
                         name: `💬┆Message`,

@@ -10,7 +10,7 @@ module.exports = async (client, interaction, args) => {
             let money = parseInt(interaction.options.getNumber('amount'));
 
             if (!money) return client.errUsage({ usage: "blackjack [amount]", type: 'editreply' }, interaction);
-            if (money > data.Money) return client.errNormal({ error: `You are betting more than you have!`, type: 'editreply' }, interaction);
+            if (money > data.Money) return client.errNormal({ error: `Vous misez plus que vous n'avez !`, type: 'editreply' }, interaction);
 
             var numCardsPulled = 0;
             var gameOver = false;
@@ -152,7 +152,7 @@ module.exports = async (client, interaction, args) => {
                         desc: `${f} \n${msg}`,
                         fields: [
                             {
-                                name: `You`,
+                                name: `Toi`,
                                 value: cardsMsg,
                                 inline: true,
                             },
@@ -171,7 +171,7 @@ module.exports = async (client, interaction, args) => {
                         desc: `${f} \n${msg}`,
                         fields: [
                             {
-                                name: `You`,
+                                name: `Toi`,
                                 value: cardsMsg,
                                 inline: true,
                             },
@@ -192,27 +192,27 @@ module.exports = async (client, interaction, args) => {
                     bet("win");
                     gameOver = true;
                     endMsg(
-                        `Win! You got 21!`,
-                        `Bot had ${dealer.score.toString()}`,
-                        `GREEN`
+                        `Gagner ! Tu as 21!`,
+                        `Le Bot avait ${dealer.score.toString()}`,
+                        `Vert`
                     );
                 }
                 if (player.score > 21) {
                     bet("lose");
                     gameOver = true;
                     endMsg(
-                        `Lost! You reached over 21!`,
-                        `Bot had ${dealer.score.toString()}`,
-                        `RED`
+                        `Perdu ! Vous aviez plus que 21!`,
+                        `Le Bot avait ${dealer.score.toString()}`,
+                        `Rouge`
                     );
                 }
                 if (dealer.score === 21) {
                     bet("lose");
                     gameOver = true;
                     endMsg(
-                        `Lost! The dealer got 21!`,
-                        `Bot had ${dealer.score.toString()}`,
-                        `RED`
+                        `Perdu ! Le dealer avait 21!`,
+                        `Le Bot avait ${dealer.score.toString()}`,
+                        `Rouge`
                     );
                 }
                 if (dealer.score > 21) {

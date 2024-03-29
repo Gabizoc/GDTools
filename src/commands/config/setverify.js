@@ -30,7 +30,7 @@ module.exports = async (client, interaction, args) => {
         }
 
         client.succNormal({
-            text: `Verify panel has been successfully created`,
+            text: `Panel de verification bien générer !`,
             fields: [
                 {
                     name: `📘┆Channel`,
@@ -38,7 +38,7 @@ module.exports = async (client, interaction, args) => {
                     inline: true
                 },
                 {
-                    name: `📛┆Role`,
+                    name: `📛┆Rôle`,
                     value: `${role} (${role.name})`,
                     inline: true
                 }
@@ -55,8 +55,8 @@ module.exports = async (client, interaction, args) => {
             );
 
         client.embed({
-            title: `${interaction.guild.name}・verify`,
-            desc: `Click on the button to verify yourself`,
+            title: `${interaction.guild.name}・Vérification`,
+            desc: `Clique sur le bouton pour te vérifié !`,
             components: [row]
         }, channel)
     }

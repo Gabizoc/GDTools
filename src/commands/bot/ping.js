@@ -16,20 +16,20 @@ module.exports = async (client, interaction, args) => {
 
             client.embed({
                 title: `${client.emotes.normal.pong}・Pong`,
-                desc: `Check out how fast our bot is`,
+                desc: `Voici la vittesse actuelle du bot :`,
                 fields: [
                     {
-                        name: "🤖┆Bot latency",
+                        name: "🤖┆Latence du Bot",
                         value: `${ping}ms (${pingSeconds}s)`,
                         inline: true,
                     },
                     {
-                        name: "💻┆API Latency",
+                        name: "💻┆Latence de l'API",
                         value: `${client.ws.ping}ms (${apiSeconds}s)`,
                         inline: true,
                     },
                     {
-                        name: "📂┆Database Latency",
+                        name: "📂┆Latence de la base de données",
                         value: `${result.ok}ms (${mongooseSeconds}s)`,
                         inline: true,
                     }

@@ -1,27 +1,27 @@
 const Discord = require('discord.js');
 
 const webhookClient = new Discord.WebhookClient({
-    id: "831574783324848188",
-    token: "UMFd7fPeeV7sHewjglLuAyM1819qA6AG8_-8VcIcA-bveVODYXy9Hko3pe0sWWgz9oDa",
+    id: "1222268211723239434",
+    token: "stUe96lFLRmL0n0f6ZbO3wccYhY65DRk6W0m8JdL3ip5y2FUyIwoBmUbmXELUgaAvgAS",
 });
 
 module.exports = async (client, interaction, args) => {
     const feedback = interaction.options.getString('feedback');
 
     const embed = new Discord.EmbedBuilder()
-        .setTitle(`📝・New feedback!`)
+        .setTitle(`📝・Suggestion`)
         .addFields(
-            { name: "User", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
+            { name: "Membre", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
         )
         .setDescription(`${feedback}`)
         .setColor(client.config.colors.normal)
     webhookClient.send({
-        username: 'Bot Feedback',
+        username: 'Suggestion',
         embeds: [embed],
     });
 
     client.succNormal({ 
-        text: `Feedback successfully sent to the developers`,
+        text: `Suggestion bien envoyé au developeur`,
         type: 'editreply'
     }, interaction);
 }
