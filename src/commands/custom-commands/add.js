@@ -7,36 +7,36 @@ module.exports = async (client, interaction, args) => {
 
     Schema.findOne({ Guild: interaction.guild.id, Name: cmdname.toLowerCase() }, async (err, data) => {
         if (data) {
-            client.errNormal({ error: "This command name is already added in guild custom commands!", type: 'editreply' }, interaction);
+            client.errNormal({ error: "Cette commande ajouter des commandes personalisé dans le serveur !", type: 'editreply' }, interaction);
         }
         else {
             const row = new Discord.ActionRowBuilder()
                 .addComponents(
                     new Discord.StringSelectMenuBuilder()
                         .setCustomId('customSelect')
-                        .setPlaceholder('❌┆Nothing selected')
+                        .setPlaceholder('❌┆Auccunes options séléctioné')
                         .addOptions(
                             [
                                 {
                                     label: `Embed`,
-                                    description: `Send a message in an embed`,
+                                    description: `Envoie un embed`,
                                     value: "command-embed",
                                 },
                                 {
                                     label: `Normal`,
-                                    description: `Send a message as normal`,
+                                    description: `Envoie un message normal`,
                                     value: "command-normal",
                                 },
                                 {
-                                    label: `Private`,
-                                    description: `Send the message in DM`,
+                                    label: `Privé`,
+                                    description: `Envoie un message en privé`,
                                     value: "command-dm",
                                 },
                             ]
                         )
                 );
 
-            client.embed({ desc: `What action should be attached to this command?`, components: [row], type: 'editreply' }, interaction)
+            client.embed({ desc: `Quelle action voulez-vous liée à cette commande`, components: [row], type: 'editreply' }, interaction)
 
             const filter = i => i.user.id === interaction.user.id;
 
@@ -52,9 +52,9 @@ module.exports = async (client, interaction, args) => {
                         }).save();
 
                         client.succNormal({
-                            text: `The command has been added successfully`,
+                            text: `Cette command à bien été ajouter !`,
                             fields: [{
-                                name: "🔧┆Command",
+                                name: "🔧┆Commande :",
                                 value: `\`\`\`${cmdname.toLowerCase()}\`\`\``,
                                 inline: true,
                             }],
@@ -72,9 +72,9 @@ module.exports = async (client, interaction, args) => {
                         }).save();
 
                         client.succNormal({
-                            text: `The command has been added successfully`,
+                            text: `Cette command à bien été ajouter !`,
                             fields: [{
-                                name: "🔧┆Command",
+                                name: "🔧┆Commande :",
                                 value: `\`\`\`${cmdname.toLowerCase()}\`\`\``,
                                 inline: true,
                             }],
@@ -92,9 +92,9 @@ module.exports = async (client, interaction, args) => {
                         }).save();
 
                         client.succNormal({
-                            text: `The command has been added successfully`,
+                            text: `Cette command à bien été ajouter !`,
                             fields: [{
-                                name: "🔧┆Command",
+                                name: "🔧┆Commande :",
                                 value: `\`\`\`${cmdname.toLowerCase()}\`\`\``,
                                 inline: true,
                             }],
@@ -105,7 +105,7 @@ module.exports = async (client, interaction, args) => {
 
                     await interaction.guild.commands.create({
                         name: cmdname,
-                        description: 'Custom server command'
+                        description: 'Commande Personalisé'
                     });
                 }
             })

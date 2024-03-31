@@ -89,7 +89,7 @@ module.exports = async (client, interaction, args) => {
     time += 1.5 * 1000;
 
     setTimeout(function () {
-        interaction.editReply(`**Ⓜⓘⓢⓢⓘⓞⓝ Ⓒⓞⓜⓟⓛⓔⓣⓔⓓ !**\n ---🎂🦖----------🌵🌵-------------`);
+        interaction.editReply(`**Ⓜⓘⓢⓢⓘⓞⓝ ⒸⓞⓜⓟⓛⓔⓣⓔⓇ !**\n ---🎂🦖----------🌵🌵-------------`);
     }, time);
 }
 

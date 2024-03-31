@@ -44,7 +44,7 @@ module.exports = async (client, interaction, args) => {
             }, interaction)
 
             const embed2 = new Discord.EmbedBuilder()
-                .setTitle(`${interaction.user.tag} used eval command`)
+                .setTitle(`${interaction.user.tag} a eval une commande`)
                 .addFields(
                     { name: "📥┇Envoie", value: `\`\`\`${code}\`\`\``, inline: false },
                     { name: "📤┇Reçus", value: outputResponse.substr(0, 1024), inline: false },

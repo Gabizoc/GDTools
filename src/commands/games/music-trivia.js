@@ -11,16 +11,16 @@ module.exports = async (client, interaction, args) => {
 
     const number = interaction.options.getNumber('number');
 
-    if (!number || isNaN(number)) return client.errUsage({ usage: "music-trivia [amount of numbers]", type: 'editreply' }, interaction);
+    if (!number || isNaN(number)) return client.errUsage({ usage: "Nombre de quiz musiqual [amount of numbers]", type: 'editreply' }, interaction);
 
     const channel = interaction.member.voice.channel;
-    if (!channel) return client.errNormal({ error: `You're not in a voice channel!`, type: 'editreply' }, interaction);
+    if (!channel) return client.errNormal({ error: `Tu n'es pas dans un vocal !`, type: 'editreply' }, interaction);
 
-    if (interaction.guild.members.me.voice.channel && interaction.member.voice.channel.id !== interaction.guild.members.me.voice.channel.id) return client.errNormal({ error: `You are not in the same voice channel!`, type: 'editreply' }, interaction);
+    if (interaction.guild.members.me.voice.channel && interaction.member.voice.channel.id !== interaction.guild.members.me.voice.channel.id) return client.errNormal({ error: `Vous n'êtes pas dans le même vocal !`, type: 'editreply' }, interaction);
 
-    if (interaction.client.playerManager.get(interaction.guild.id)) return client.errNormal({ error: `You can't use this while a track is playing!`, type: 'editreply' }, interaction);
+    if (interaction.client.playerManager.get(interaction.guild.id)) return client.errNormal({ error: `Vous ne pouvez pas utiliser cette fonction pendant la lecture d'un morceau !`, type: 'editreply' }, interaction);
 
-    if (interaction.client.triviaManager.get(interaction.guildId)) return client.errNormal({ error: `There is already a trivia in play!`, type: 'editreply' }, interaction);
+    if (interaction.client.triviaManager.get(interaction.guildId)) return client.errNormal({ error: `Il y a déjà un quiz en cours !`, type: 'editreply' }, interaction);
 
     const jsonSongs = fs.readFileSync(
         './src/config/data/musictrivia.json',
@@ -79,8 +79,8 @@ async function handleSubscription(interaction, player, client) {
     player.process(player.queue);
 
     client.embed({
-        title: `🎶・Music Quiz`,
-        desc: `Get ready! Vote skip the song by entering the word 'skip'. Good luck! \n\n**Songs in queue:** ${queue.length} \n**Time to play:** 30 seconds`,
+        title: `🎶・Quiz musical`,
+        desc: `Préparez-vous ! Votez pour passer la chanson en entrant le mot "skip". Bonne chance ! \n\n**Chansons en attente :** ${queue.length} \n**Temps de jeu :** 30 seconds`,
         type: 'editreply'
     }, interaction);
 }
@@ -90,7 +90,7 @@ function getRandom(arr, n) {
         len = arr.length,
         taken = new Array(len);
     if (n > len)
-        throw new RangeError('getRandom: More elements taken than available!');
+        throw new RangeError(`getRandom: Plus d'éléments pris que d'éléments disponibles !`);
     while (n--) {
         var x = Math.floor(Math.random() * len);
         result[n] = arr[(x in taken) ? taken[x] : x];

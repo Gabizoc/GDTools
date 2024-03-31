@@ -38,7 +38,7 @@ module.exports = async (client, interaction, args) => {
 
                 let embedLogs = new Discord.EmbedBuilder()
                     .setTitle(`🔨・Ban Ajouté`)
-                    .setDescription(`<@!${member.id}> (${member.id}) banni du bot`)
+                    .setDescription(`<@!${member.id}> (${member.id}) est maintenat banni du bot`)
                     .addFields(
                         { name: "👤┆Banni par", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
                     )
@@ -46,7 +46,7 @@ module.exports = async (client, interaction, args) => {
                     .setFooter({ text: client.config.discord.footer })
                     .setTimestamp();
                 webhookClientLogs.send({
-                    username: 'Bot Bans',
+                    username: 'Bannisement du bot',
                     embeds: [embedLogs],
                 });
             }
@@ -57,15 +57,15 @@ module.exports = async (client, interaction, args) => {
             if (data) {
                 Schema.findOneAndDelete({ User: member.id }).then(() => {
                     client.succNormal({
-                        text: `<@!${member.id}> (${member.id}) déban du bot`,
+                        text: `<@!${member.id}> (${member.id}) a été déban du bot`,
                         type: 'editreply'
                     }, interaction)
 
                     let embedLogs = new Discord.EmbedBuilder()
-                        .setTitle(`🔨・Ban supprimer`)
+                        .setTitle(`🔨・Ban supprimer :`)
                         .setDescription(`<@!${member.id}> (${member.id}) a été débanni du bot`)
                         .addFields(
-                            { name: "👤┆Déban de", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
+                            { name: "👤┆Déban de :", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
                         )
                         .setColor(client.config.colors.normal)
                         .setFooter({ text: client.config.discord.footer })

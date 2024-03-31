@@ -4,7 +4,7 @@ module.exports = async (client, interaction, args) => {
     const message = interaction.options.getString('message');
 
     client.succNormal({
-        text: `Message has been sent successfully!`,
+        text: `Le message a bien été envoyé !`,
         type: 'ephemeraledit'
     }, interaction);
 

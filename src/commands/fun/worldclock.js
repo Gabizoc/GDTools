@@ -24,10 +24,10 @@ module.exports = async (client, interaction, args) => {
     });
 
     client.embed({
-        title: `⏰・World clock`,
+        title: `⏰・Horloge Mondial`,
         fields: [
             {
-                name: ":flag_eu:┇London (GMT)",
+                name: ":flag_eu:┇Londre (GMT)",
                 value: `${gmt}\n(GMT+0/GMT+1)`,
                 inline: true,
             },

@@ -11,22 +11,22 @@ module.exports = async (client, interaction, args) => {
     var result = Math.ceil(Math.random() * 100);
 
     client.embed({
-        title: `${client.emotes.normal.heart}・Love meter`,
-        desc: "See how much you match!",
+        title: `${client.emotes.normal.heart}・Calculateur d'amour`,
+        desc: "Regardez combien de % vous matcher !",
         fields: [
             {
-                name: "Name 1",
+                name: "Membre 1",
                 value: `${user1}`,
                 inline: true,
             },
             {
-                name: "Name 2",
+                name: "Membre 2",
                 value: `${user2}`,
                 inline: true,
             },
             {
-                name: "Result",
-                value: `**${user2}** and **${user2}** match **${result}%**`,
+                name: "Resultat",
+                value: `**${user2}** et **${user2}** match à **${result}%**`,
                 inline: false,
             },
         ],

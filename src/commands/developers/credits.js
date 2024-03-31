@@ -27,7 +27,7 @@ module.exports = async (client, interaction, args) => {
         })
 
         client.succNormal({
-            text: `Added **${amount} credits** to ${user}`,
+            text: `Ajout de **${amount} credits** à ${user}`,
             type: 'editreply'
         }, interaction);
 
@@ -35,8 +35,8 @@ module.exports = async (client, interaction, args) => {
             .setTitle(`🪙・Credit Ajouter !`)
             .setDescription(`Ajout de crédit à ${user} (${user.id})`)
             .addFields(
-                { name: "👤┆Ajouter par", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
-                { name: "🔢┆Nombre", value: `${amount}`, inline: true },
+                { name: "👤┆Ajouter par :", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
+                { name: "🔢┆Nombre :", value: `${amount}`, inline: true },
             )
             .setColor(client.config.colors.normal)
             .setTimestamp();
@@ -62,8 +62,8 @@ module.exports = async (client, interaction, args) => {
             .setTitle(`🪙・Credits Supprimer`)
             .setDescription(`Suppression de credits à ${user} (${user.id})`)
             .addFields(
-                { name: "👤┆Supprimer par", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
-                { name: "🔢┆Nombre", value: `${amount}`, inline: true },
+                { name: "👤┆Supprimer par :", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
+                { name: "🔢┆Nombre :", value: `${amount}`, inline: true },
             )
             .setColor(client.config.colors.normal)
             .setTimestamp();

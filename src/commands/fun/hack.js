@@ -23,31 +23,31 @@ module.exports = async (client, interaction, args) => {
 
     client.embed({
         title: '💻・Hacking',
-        desc: `The hack on ${user} started...`,
+        desc: `Le haking de ${user} à commencé...`,
         type: 'editreply'
     }, interaction).then(msg => {
 
         wait(140);
         client.embed({
             title: '💻・Hacking',
-            desc: `Searching for user information..`,
+            desc: `Recheche des informations...`,
             type: 'edit',
         }, msg).then(i => {
 
             wait(133);
             client.embed({
                 title: '💻・Hacking',
-                desc: `Searching for IP address...`,
+                desc: `Recherche de l'ip...`,
                 type: 'edit',
             }, msg).then(i => {
 
                 wait(140);
                 client.embed({
                     title: '💻・Hacking',
-                    desc: `The users ip address was found!`,
+                    desc: `L'ip a été trouvé !`,
                     fields: [
                         {
-                            name: '🔗┆IP Adress',
+                            name: '🔗┆Addresse IP',
                             value: `\`\`\`127.0.0.1\`\`\``,
                             inline: true,
                         }
@@ -58,21 +58,21 @@ module.exports = async (client, interaction, args) => {
                     wait(60);
                     client.embed({
                         title: '💻・Hacking',
-                        desc: `Searching for Discord login...`,
+                        desc: `Recherche des logins discord...`,
                         type: 'edit',
                     }, msg).then(i => {
 
                         wait(230);
                         client.embed({
                             title: '💻・Hacking',
-                            desc: `The users discord login was found!`,
+                            desc: `Login discord trouvé !`,
                             fields: [
                                 {
-                                    name: '📨┆Email',
-                                    value: `\`\`\`${user.username}onDiscord@gmail.com\`\`\``
+                                    name: '📨┆Email :',
+                                    value: `\`\`\`${user.username}.tcon@gmail.com\`\`\``
                                 },
                                 {
-                                    name: '🔑┆Password',
+                                    name: '🔑┆Mot de passe :',
                                     value: `\`\`\`${password}\`\`\``
                                 }
                             ],
@@ -82,7 +82,7 @@ module.exports = async (client, interaction, args) => {
                             wait(200);
                             client.embed({
                                 title: '💻・Hacking',
-                                desc: `Search for Discord token...`,
+                                desc: `Recherche du token Discord...`,
                                 type: 'edit'
                             }, msg).then(i => {
 
@@ -90,10 +90,10 @@ module.exports = async (client, interaction, args) => {
                                 fetch(`https://some-random-api.com/bottoken?${user.id}`).then((res) => res.json()).catch({}).then(async (json) => {
                                     client.embed({
                                         title: '💻・Hacking',
-                                        desc: `The users discord account token was found!`,
+                                        desc: `Discord token trouvé !`,
                                         fields: [
                                             {
-                                                name: '🔧┆Token',
+                                                name: '🔧┆Token :',
                                                 value: `\`\`\`${json.token}\`\`\``,
                                                 inline: true
                                             }
@@ -104,15 +104,15 @@ module.exports = async (client, interaction, args) => {
                                         wait(140);
                                         client.embed({
                                             title: '💻・Hacking',
-                                            desc: `Reporting account to Discord for breaking TOS...`,
+                                            desc: `Signalement du compte à Discord pour avoir enfreint les CGU...`,
                                             type: 'edit',
                                         }, msg).then(i => {
 
                                             wait(180);
-                                            client.succNormal({ text: `${user} is succesfully hacked. All the user's information was send to your dm`, type: 'edit' }, msg);
+                                            client.succNormal({ text: `${user} a bien été hacker ! Informations envoyé en MD`, type: 'edit' }, msg);
                                             client.embed({
                                                 title: '😂・Pranked',
-                                                image: "https://media1.tenor.com/images/05006ed09075a0d6965383797c3cea00/tenor.gif?itemid=17987788",
+                                                image: "https://tenor.com/fr/view/rick-roll-gif-24318291",
                                             }, interaction.user)
                                         })
                                     })

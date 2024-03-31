@@ -75,8 +75,8 @@ module.exports = async (client, interaction, args) => {
             .setTitle(`📛・Badge Ajouter`)
             .setDescription(`Badge ajouté à ${member} (${member.id})`)
             .addFields(
-                { name: "👤┆Ajouté par", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
-                { name: `📛┆Badge`, value: `${badgeFlags[badge.toUpperCase()]} (${badge.toUpperCase()})`, inline: true },
+                { name: "👤┆Ajouté par :", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
+                { name: `📛┆Badge :`, value: `${badgeFlags[badge.toUpperCase()]} (${badge.toUpperCase()})`, inline: true },
             )
             .setColor(client.config.colors.normal)
             .setFooter({ text: client.config.discord.footer})
@@ -129,8 +129,8 @@ module.exports = async (client, interaction, args) => {
             .setTitle(`📛・Badge Supprimé`)
             .setDescription(`Badge supprimer a ${member} (${member.id})`)
             .addFields(
-                { name: "👤┆Supprimé par", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
-                { name: `📛┆Badge`, value: `${badgeFlags[badge.toUpperCase()]} (${badge.toUpperCase()})`, inline: true },
+                { name: "👤┆Supprimé par :", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
+                { name: `📛┆Badge :`, value: `${badgeFlags[badge.toUpperCase()]} (${badge.toUpperCase()})`, inline: true },
             )
             .setColor(client.config.colors.normal)
             .setFooter({ text: client.config.discord.footer })
