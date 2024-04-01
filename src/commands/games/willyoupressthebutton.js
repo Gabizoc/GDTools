@@ -56,7 +56,7 @@ module.exports = async (client, interaction, args) => {
             .addComponents(btn, btn2);
 
         client.embed({
-            title: `🤔・Will you press the button?`,
+            title: `🤔・Quand presser le bouton ?`,
             desc: `\`\`\`${decode(res.questions[0].charAt(0).toUpperCase() + res.questions[0].slice(1))} \`\`\`\n**But** \`\`\`\n\n${decode(res.questions[1].charAt(0).toUpperCase() + res.questions[1].slice(1))}\`\`\``,
             components: [row],
             type: 'editreply'
@@ -81,7 +81,7 @@ module.exports = async (client, interaction, args) => {
                     collector.stop();
 
                     client.embed({
-                        title: `🤔・Will you press the button?`,
+                        title: `🤔・Quand presser le bouton ?`,
                         desc: `\`\`\`${decode(res.questions[0].charAt(0).toUpperCase() + res.questions[0].slice(1))} \`\`\`\n**But** \`\`\`\n\n${decode(res.questions[1].charAt(0).toUpperCase() + res.questions[1].slice(1))}\`\`\``,
                         components: [{ type: 1, components: [btn, btn2] }],
                         type: 'editreply'
@@ -100,7 +100,7 @@ module.exports = async (client, interaction, args) => {
                     collector.stop();
 
                     client.embed({
-                        title: `🤔・Will you press the button?`,
+                        title: `🤔・Quand presser le bouton ?`,
                         desc: `\`\`\`${decode(res.questions[0].charAt(0).toUpperCase() + res.questions[0].slice(1))} \`\`\`\n**But** \`\`\`\n\n${decode(res.questions[1].charAt(0).toUpperCase() + res.questions[1].slice(1))}\`\`\``,
                         components: [{ type: 1, components: [btn, btn2] }],
                         type: 'editreply'
