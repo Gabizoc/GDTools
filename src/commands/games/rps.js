@@ -16,13 +16,13 @@ module.exports = async (client, interaction, args) => {
 
             if (result == "ciseau") return client.embed({
                 title: `${client.emotes.normal.papier}・¨Pierre, Papier, Ciseau`,
-                desc: `I have ${result}, You win!`,
+                desc: `J'ai ${result}, Tu gagnes !`,
                 type: 'editreply'
             }, interaction);
 
             if (result == "pierre") return client.embed({
                 title: `${client.emotes.normal.papier}・Pierre, Papier, Ciseau`,
-                desc: `I have ${result}, It's a draw!`,
+                desc: `J'ai ${result}, Égalité !`,
                 type: 'editreply'
             }, interaction);
             break;
@@ -30,19 +30,19 @@ module.exports = async (client, interaction, args) => {
         case "papier":
             if (result == "papier") return client.embed({
                 title: `${client.emotes.normal.papier}・Pierre, Papier, Ciseau`,
-                desc: `I have ${result}, It's a draw!`,
+                desc: `J'ai ${result}, Égalité`,
                 type: 'editreply'
             }, interaction);
 
             if (result == "ciseau") return client.embed({
                 title: `${client.emotes.normal.papier}・Pierre, Papier, Ciseau`,
-                desc: `I have ${result}, I win!`,
+                desc: `J'ai ${result}, j'ai gagné !`,
                 type: 'editreply'
             }, interaction);
 
             if (result == "pierre") return client.embed({
                 title: `${client.emotes.normal.papier}・Pierre, Papier, Ciseau`,
-                desc: `I have ${result}, You win!`,
+                desc: `J'ai ${result}, Tu gagne !`,
                 type: 'editreply'
             }, interaction);
             break;
@@ -50,19 +50,19 @@ module.exports = async (client, interaction, args) => {
         case "ciseau":
             if (result == "papier") return client.embed({
                 title: `${client.emotes.normal.papier}・Pierre, Papier, Ciseau`,
-                desc: `I have ${result}, You win!`,
+                desc: `J'ai ${result}, tu gagnes !`,
                 type: 'editreply'
             }, interaction);
 
             if (result == "ciseau") return client.embed({
                 title: `${client.emotes.normal.papier}・Pierre, Papier, Ciseau`,
-                desc: `I have ${result}, It's a draw!`,
+                desc: `J'ai ${result}, Égalité !`,
                 type: 'editreply'
             }, interaction);
 
             if (result == "pierre") return client.embed({
                 title: `${client.emotes.normal.papier}・Pierre, Papier, Ciseau`,
-                desc: `I have ${result}, I win!`,
+                desc: `J'ai ${result}, j'ai gagné !`,
                 type: 'editreply'
             }, interaction);
             break;
