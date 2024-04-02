@@ -11,7 +11,7 @@ module.exports = async (client, interaction, args) => {
     let attach = new Discord.AttachmentBuilder(image, { name: "kiss.png" });
     const embed = client.templateEmbed();
     embed.setImage('attachment://kiss.png')
-    embed.setDescription(`**${interaction.user.username}** kissed **${member.username}**`)
+    embed.setDescription(`**${interaction.user.username}** embrasse **${member.username}**`)
     interaction.editReply({ files: [attach], embeds: [embed] })
 }
 

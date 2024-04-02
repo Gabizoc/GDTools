@@ -5,40 +5,35 @@ module.exports = async (client, interaction, args) => {
 
   client.embed({
       title: `ℹ・Channel information`,
-      desc: `Channel information about: <#${channel.id}>`,
+      desc: `Information sur le channel : <#${channel.id}>`,
       fields: [
           {
-              name: "Type",
+              name: "Type :",
               value: `${channel.type}`,
               inline: true,
           },
           {
-              name: "ID",
+              name: "ID :",
               value: `${channel.id}`,
               inline: true,
           },
           {
-              name: "Type",
-              value: `${channel.type}`,
-              inline: true,
-          },
-          {
-              name: "Made on",
+              name: "Créer le :",
               value: `${channel.createdAt}`,
               inline: true,
           },
           {
-              name: "Subject",
+              name: "Sujet :",
               value: `${channel.topic ? channel.topic : 'N/A'}`,
               inline: true,
           },
           {
-              name: "NSFW",
+              name: "NSFW :",
               value: `${channel.nsfw}`,
               inline: true,
           },
           {
-              name: "Parent",
+              name: "Catégorie :",
               value: `${channel.parentID ? channel.parentID : 'N/A'}`,
               inline: true,
           },

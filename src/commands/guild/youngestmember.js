@@ -8,16 +8,16 @@ module.exports = async (client, interaction, args) => {
   const member = Array.from(getMember.values());
 
   client.embed({
-    title: `👶・Youngest member`,
-    desc: `See who is the youngest member in **${interaction.guild.name}**`,
+    title: `👶・Membre le plus jeune`,
+    desc: `Voir qui est le plus jeune dans le serveur : **${interaction.guild.name}**`,
     fields: [
       {
-        name: `👤┆User`,
+        name: `👤┆Membre :`,
         value: `${member[0]} (${member[0].user.username}#${member[0].user.discriminator})`,
         inline: true
       },
       {
-        name: `⏰┆Account creation`,
+        name: `⏰┆Compte créer le :`,
         value: `<t:${Math.round(member[0].user.createdTimestamp / 1000)}>`,
         inline: true
       },

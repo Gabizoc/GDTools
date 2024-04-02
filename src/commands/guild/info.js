@@ -2,9 +2,9 @@ const Discord = require('discord.js');
 
 module.exports = async (client, interaction, args) => {
   let verifLevels = {
-    "0": "None",
-    "1": "Low",
-    "2": "Medium",
+    "0": "Non",
+    "1": "Faible",
+    "2": "Modéré",
     "3": "(╯°□°）╯︵  ┻━┻",
     "4": "┻━┻ミヽ(ಠ益ಠ)ノ彡┻━┻"
   }
@@ -28,7 +28,7 @@ module.exports = async (client, interaction, args) => {
   }
 
   let tier = {
-     "0": "None",
+     "0": "Non",
     "1": "TIER 1",
     "2": "TIER 2",
     "3": "**TIER 3**"
@@ -38,97 +38,97 @@ module.exports = async (client, interaction, args) => {
 
   client.embed({
     title: `ℹ️・Server Information`,
-    desc: `Information about the server ${interaction.guild.name}`,
+    desc: `Information sur le serveur : ${interaction.guild.name}`,
     thumbnail: interaction.guild.iconURL({ dynamic: true, size: 1024 }),
     image: interaction.guild.bannerURL({ size: 1024 }),
     fields: [
       {
-        name: "Server name:",
+        name: "Nom du serveur :",
         value: `${interaction.guild.name}`,
         inline: true,
       },
       {
-        name: "Server id:",
+        name: "ID du serveur :",
         value: `${interaction.guild.id}`,
         inline: true,
       },
       {
-        name: "Owner: ",
+        name: "Créateur :",
         value: `<@!${interaction.guild.ownerId}>`,
         inline: true
       },
       {
-        name: "Verify level: ",
+        name: "Niveau de vérification :",
         value: `${verifLevels[interaction.guild.verificationLevel]}`,
         inline: true
       },
       {
-        name: "Boost tier: ",
+        name: "Niveau de Boost :",
         value: `${tier[interaction.guild.premiumTier]}`,
         inline: true
       },
       {
-        name: "Boost count:",
-        value: `${interaction.guild.premiumSubscriptionCount || '0'} boosts`,
+        name: "Nombre de Boost :",
+        value: `${interaction.guild.premiumSubscriptionCount || '0'} boost`,
         inline: true
       },
       {
-        name: "Created on:",
+        name: "Créer le :",
         value: `<t:${Math.round(interaction.guild.createdTimestamp / 1000)}>`,
         inline: true
       },
       {
-        name: "Members:",
-        value: `${interaction.guild.memberCount} members!`,
+        name: "Membres :",
+        value: `${interaction.guild.memberCount} membres!`,
         inline: true
       },
       {
-        name: "Bots:",
+        name: "Bots :",
         value: `${members.filter(member => member.user.bot).size} bots!`,
         inline: true
       },
       {
-        name: "Text Channels: ",
+        name: "Channel de texte",
         value: `${interaction.guild.channels.cache.filter(channel => channel.type === Discord.ChannelType.GuildText).size} channels!`,
         inline: true
       },
       {
-        name: "Voice Channels:",
+        name: "Vocals :",
         value: `${interaction.guild.channels.cache.filter(channel => channel.type ===  Discord.ChannelType.GuildVoice).size} channels!`,
         inline: true
       },
       {
-        name: "Stage Channels:",
+        name: "Channel de donférence :",
         value: `${interaction.guild.channels.cache.filter(channel => channel.type ===  Discord.ChannelType.GuildStageVoice).size} channels!`,
         inline: true
       },
       {
-        name: "News Channels:",
+        name: "Channel d'annonces :",
         value: `${interaction.guild.channels.cache.filter(channel => channel.type ===  Discord.ChannelType.GuildAnnouncement).size} channels!`,
         inline: true
       },
       {
-        name: "Public Threads:",
-        value: `${interaction.guild.channels.cache.filter(channel => channel.type === 'GUILD_PUBLIC_THREAD').size} threads!`,
+        name: "Fils publiques :",
+        value: `${interaction.guild.channels.cache.filter(channel => channel.type === 'GUILD_PUBLIC_THREAD').size} fils !`,
         inline: true
       },
       {
-        name: "Private Threads:",
-        value: `${interaction.guild.channels.cache.filter(channel => channel.type === 'GUILD_PRIVATE_THREAD').size} threads!`,
+        name: "Fils privés :",
+        value: `${interaction.guild.channels.cache.filter(channel => channel.type === 'GUILD_PRIVATE_THREAD').size} fils !`,
         inline: true
       },
       {
-        name: "Roles:",
+        name: "Rôles :",
         value: `${interaction.guild.roles.cache.size} roles!`,
         inline: true
       },
       {
-        name: "Emoji count:",
+        name: "Nombre d'émojis :",
         value: `${interaction.guild.emojis.cache.size} emoji's`,
         inline: true
       },
       {
-        name: "Sticker count:",
+        name: "Nombre de stickers :",
         value: `${interaction.guild.stickers.cache.size} stickers`,
         inline: true
       }

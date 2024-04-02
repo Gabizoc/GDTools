@@ -12,13 +12,13 @@ module.exports = async (client, interaction, args) => {
         prize: `${client.emotes.normal.gift} - ${prize}`,
         lastChance: {
             enabled: true,
-            content: `${client.emotes.normal.error} **LAST CHANCE TO ENTER !** ${client.emotes.normal.error}`,
+            content: `${client.emotes.normal.error} **Dernière chance pour rejoindre !** ${client.emotes.normal.error}`,
             threshold: 5000,
             embedColor: '#FF0000'
         },
         pauseOptions: {
             isPaused: false,
-            content: '⚠️ **THIS GIVEAWAY IS PAUSED !** ⚠️',
+            content: '⚠️ **Ce giveaway est en pause !** ⚠️',
             unPauseAfter: null,
             embedColor: '#FFFF00'
         },
@@ -26,29 +26,29 @@ module.exports = async (client, interaction, args) => {
         hostedBy: interaction.user,
         thumbnail: interaction.guild.iconURL({ dynamic: true, size: 1024 }),
         messages: {
-            giveaway: `${client.emotes.normal.party} **GIVEAWAY** ${client.emotes.normal.party}`,
-            giveawayEnded: `${client.emotes.normal.party} **GIVEAWAY ENDED** ${client.emotes.normal.party}`,
-            drawing: `${client.emotes.normal.clock} - Ends at: **{timestamp}**!`,
-            inviteToParticipate: "React with 🥳 to enter the giveaway! \n",
-            winMessage: "Congratulations {winners}! You just won the **{this.prize}** !",
-            embedFooter: "Giveaway!",
+            giveaway: `${client.emotes.normal.party} **Giveaway** ${client.emotes.normal.party}`,
+            giveawayEnded: `${client.emotes.normal.party} **Giveaway Fini** ${client.emotes.normal.party}`,
+            drawing: `${client.emotes.normal.clock} - Fini dans : **{timestamp}** !`,
+            inviteToParticipate: "Pour participé au giveaway appuie sur 🥳 \n",
+            winMessage: "Félicitation {winners} ! Tu as gagné **{this.prize}** !",
+            embedFooter: "Giveaway !",
             embedColor: client.config.colors.normal,
-            noWinner: "Giveaway canceled, not enough participants. \n",
-            hostedBy: `${client.emotes.normal.party} - Hosted by: {this.hostedBy}`,
-            winners: `🏆 - Winner(s)`,
-            endedAt: "Ends at:",
+            noWinner: "Giveaway annuler, pas assez de participant. \n",
+            hostedBy: `${client.emotes.normal.party} - Lancé par : {this.hostedBy}`,
+            winners: `🏆 - Gagnant(s)`,
+            endedAt: "Fini dans :",
             units: {
-                seconds: "seconds",
+                seconds: "secondes",
                 minutes: "minutes",
-                hours: "hours",
-                days: "days",
+                hours: "heures",
+                days: "jours",
                 pluralS: false
             },
         },
 
     }).then((gData) => {
         client.succNormal({ 
-            text: `Giveaway started in ${gchannel}`,
+            text: `Giveaway lancé dans ${gchannel}`,
             type: 'ephemeraledit'
         }, interaction);
     });

@@ -26,16 +26,16 @@ module.exports = async (client, interaction, args) => {
   });
 
   client.embed({
-    title: `😛・Emoji's!`,
-    desc: `${OverallEmojis} Emoji's - ${interaction.guild.name}`,
+    title: `😛・Emojis !`,
+    desc: `${OverallEmojis} Emojis - ${interaction.guild.name}`,
     fields: [
       {
-        name: `Animated [${Animated}]`,
+        name: `Animé : [${Animated}]`,
         value: EmojisAnimated.substr(0, 1021) + "...",
         inline: false,
       },
       {
-        name: `Standard [${EmojiCount}]`,
+        name: `Normal : [${EmojiCount}]`,
         value: Emojis.substr(0, 1021) + "...",
         inline: false,
       },

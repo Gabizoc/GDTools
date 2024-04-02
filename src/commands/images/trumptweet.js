@@ -11,7 +11,7 @@ module.exports = async (client, interaction, args) => {
     const img = (await res.json()).message;
 
     client.embed({
-        title: `🖼・Trump tweet`,
+        title: `🖼・Tweet de Trump`,
         image: img,
         type: 'editreply'
     }, interaction)

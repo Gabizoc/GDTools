@@ -6,7 +6,7 @@ const model = require('../../database/models/badge');
 module.exports = async (client, interaction, args) => {
   const member = await interaction.guild.members.fetch(interaction.options.getUser('user').id);
   if(!member) return client.errNormal({
-    error: "This user is not in this guild!",
+    error: "Cette utilisateur n'est pas dans le serveur :",
     type: 'editreply'
   }, interaction);
   const badgeFlags = {
@@ -53,54 +53,54 @@ module.exports = async (client, interaction, args) => {
   const userFlags = member.user.flags ? member.user.flags.toArray() : [];
 
   return client.embed({
-    title: `👤・User information`,
+    title: `👤・Information sur le membre`,
     desc: `Information about ${member.user.username}`,
     thumbnail: member.user.displayAvatarURL({ dynamic: true, size: 1024 }),
     image: member.user.bannerURL({ dynamic: true, size: 1024 }),
     fields: [
       {
-        name: "Username",
+        name: "Pseudo",
         value: `${member.user.username}`,
         inline: true,
       },
       {
-        name: "Discriminator",
+        name: "TAG :",
         value: `${member.user.discriminator}`,
         inline: true,
       },
       {
-        name: "Nickname",
+        name: "Surnom :",
         value: `${member.nickname || 'No nickname'}`,
         inline: true,
       },
       {
-        name: "Id",
+        name: "ID :",
         value: `${member.user.id}`,
         inline: true,
       },
       {
-        name: "Flags",
+        name: "Drapeaux :",
         value: `${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
         inline: true,
       },
       {
-        name: "Badges",
+        name: "Badges :",
         value: `${Badges.FLAGS ? Badges.FLAGS.map(flag => badgeFlags[flag]).join(' ') : 'None'}`,
         inline: true,
       },
       {
-        name: "Discord joined at",
+        name: "Inscrit sur Discord le :",
         value: `<t:${Math.round(member.user.createdTimestamp / 1000)}>`,
         inline: true,
       },
       {
-        name: "Server joined at",
+        name: "Rejoint le serveur le :",
         value: `<t:${Math.round(member.joinedAt / 1000)}>`,
         inline: true,
       },
       {
-        name: `Roles [${roles.length}]`,
-        value: `${roles.length ? roles.join(', ') : 'None'}`,
+        name: `Roles [${roles.length}] :`,
+        value: `${roles.length ? roles.join(', ') : 'Auccun'}`,
         inline: false,
       }
     ],

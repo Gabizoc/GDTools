@@ -4,22 +4,22 @@ module.exports = async (client, interaction, args) => {
   const members = await interaction.guild.members.fetch();
 
   client.embed({
-    title: `👤・Membercount`,
-    desc: `View the total number of members in the server`,
+    title: `👤・Nombres de membres`,
+    desc: `Vois le nombres de membres sur le serveur`,
     fields: [
       {
-        name: `👤┆Members`,
-        value: `${members.filter(member => !member.user.bot).size} members`,
+        name: `👤┆Membres :`,
+        value: `${members.filter(member => !member.user.bot).size} membres`,
         inline: true
       },
       {
-        name: `🤖┆Bots`,
+        name: `🤖┆Bots :`,
         value: `${members.filter(member => member.user.bot).size} bots`,
         inline: true
       },
       {
-        name: `📘┆Total`,
-        value: `${interaction.guild.memberCount} members`,
+        name: `📘┆Total :`,
+        value: `${interaction.guild.memberCount} membres`,
         inline: true
       }
     ],

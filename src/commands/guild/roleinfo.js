@@ -7,25 +7,25 @@ module.exports = async (client, interaction, args) => {
   client.embed({
     title: `ℹ️・Role information`,
     thumbnail: interaction.guild.iconURL({ dynamic: true, size: 1024 }),
-    desc: `Information about the role ${role}`,
+    desc: `Information sur le rôle : ${role}`,
     fields: [
       {
-        name: 'Role ID:',
+        name: 'ID du rôle :',
         value: `${role.id}`,
         inline: true
       },
       {
-        name: 'Role Name:',
+        name: 'Nom du rôle :',
         value: `${role.name}`,
         inline: true
       },
       {
-        name: 'Mentionable:',
-        value: `${role.mentionable ? 'Yes' : 'No'}`,
+        name: 'Mentionable :',
+        value: `${role.mentionable ? 'Oui' : 'Non'}`,
         inline: true
       },
       {
-        name: 'Role Permissions:',
+        name: 'Permission du rôle :',
         value: `${perms.join(', ')}`
       }
     ],
