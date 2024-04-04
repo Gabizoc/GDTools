@@ -8,15 +8,15 @@ module.exports = async (client, interaction, args) => {
     Schema.findOne({ Guild: interaction.guild.id, User: user.id }, async (err, data) => {
         if (data) {
             client.embed({
-                title: "💬・Messages",
-                desc: `**${user.tag}** has \`${data.Messages}\` messages`,
+                title: "💬・Messages :",
+                desc: `**${user.tag}** a \`${data.Messages}\` messages`,
                 type: 'editreply'
             }, interaction)
         }
         else {
             client.embed({
-                title: "💬・Messages",
-                desc: `**${user.tag}** has \`0\` messages`,
+                title: "💬・Messages :",
+                desc: `**${user.tag}** a \`0\` messages`,
                 type: 'editreply'
             }, interaction)
         }

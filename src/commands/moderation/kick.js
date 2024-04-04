@@ -12,21 +12,21 @@ module.exports = async (client, interaction, args) => {
   const reason = interaction.options.getString('reason') || 'Not given';
 
   if (member.permissions.has(Discord.PermissionsBitField.Flags.KickMembers) || member.permissions.has(Discord.PermissionsBitField.Flags.KickMembers)) return client.errNormal({
-    error: "You can't kick a moderator",
+    error: "Tu ne peux pas explusé un modérateur !",
     type: 'editreply'
   }, interaction);
 
   client.embed({
-    title: `🔨・Kick`,
-    desc: `You've been kicked in **${interaction.guild.name}**`,
+    title: `🔨・Expultion`,
+    desc: `Tu as explusé **${interaction.guild.name}**`,
     fields: [
       {
-        name: "👤┆Kicked by",
+        name: "👤┆Explusé par :",
         value: interaction.user.tag,
         inline: true
       },
       {
-        name: "💬┆Reason",
+        name: "💬┆Réson :",
         value: reason,
         inline: true
       }
@@ -34,15 +34,15 @@ module.exports = async (client, interaction, args) => {
   }, member).then(function () {
     member.kick(reason)
     client.succNormal({
-      text: "The specified user has been successfully kicked and successfully received a notification!",
+      text: "L'utilisateur spécifié a été expulsé avec succès et a reçu un mp !",
       fields: [
         {
-          name: "👤┆Kicked user",
+          name: "👤┆Explusé par :",
           value: member.user.tag,
           inline: true
         },
         {
-          name: "💬┆Reason",
+          name: "💬┆Réson :",
           value: reason,
           inline: true
         }
@@ -52,7 +52,7 @@ module.exports = async (client, interaction, args) => {
   }).catch(function () {
     member.kick(reason)
     client.succNormal({
-      text: "The given user has been successfully kicked, but has not received a notification!",
+      text: "L'utilisateur spécifié a été expulsé avec succès mais n'a pas reçus de mp !",
       type: 'editreply'
     }, interaction);
   });

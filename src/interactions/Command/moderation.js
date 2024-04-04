@@ -62,26 +62,11 @@ module.exports = {
         )
         .addSubcommand(subcommand =>
             subcommand
-                .setName('softban')
-                .setDescription('Softban a user')
-                .addUserOption(option => option.setName('user').setDescription('Select a user').setRequired(true))
-                .addStringOption(option => option.setName('reason').setDescription('The reason for the ban'))
-        )
-        .addSubcommand(subcommand =>
-            subcommand
                 .setName('timeout')
                 .setDescription('Timeout a user')
                 .addUserOption(option => option.setName('user').setDescription('Select a user').setRequired(true))
                 .addNumberOption(option => option.setName('time').setDescription('Number of minutes').setRequired(true))
                 .addStringOption(option => option.setName('reason').setDescription('Reason for the time out').setRequired(true))
-        )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('tempban')
-                .setDescription('Temp ban a user')
-                .addUserOption(option => option.setName('user').setDescription('Select a user').setRequired(true))
-                .addNumberOption(option => option.setName('time').setDescription('Number of minutes').setRequired(true))
-                .addStringOption(option => option.setName('reason').setDescription('The reason for the ban'))
         )
         .addSubcommand(subcommand =>
             subcommand

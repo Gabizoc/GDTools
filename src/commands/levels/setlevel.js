@@ -21,15 +21,15 @@ module.exports = async (client, interaction, args) => {
         const user = await client.setLevel(target.id, interaction.guild.id, level);
 
         client.succNormal({ 
-            text: `Level has been modified successfully`,
+            text: `Le niveau a bien été modifié !`,
             fields: [
                 {
-                    name: "🆕┆New Level",
+                    name: "🆕┆Nouveau niveau :",
                     value: `${user.level}`,
                     inline: true,
                 },
                 {
-                    name: "👤┆User",
+                    name: "👤┆Membre :",
                     value: `${target} (${target.tag})`,
                     inline: true,
                 }
@@ -39,7 +39,7 @@ module.exports = async (client, interaction, args) => {
     }
     else {
         client.errNormal({
-            error: "Levels are disabled in this guild!",
+            error: "Le sytéme de niveaux est désactivé dans ce serveur !",
             type: 'editreply'
         }, interaction);
     }

@@ -21,15 +21,15 @@ module.exports = async (client, interaction, args) => {
         const user = await client.setXP(target.id, interaction.guild.id, xp);
 
         client.succNormal({ 
-            text: `XP has been modified successfully`,
+            text: `XP à bien été modifié !`,
             fields: [
                 {
-                    name: "🆕┆New XP",
+                    name: "🆕┆Nouveau XP :",
                     value: `${user.xp}`,
                     inline: true,
                 },
                 {
-                    name: "👤┆User",
+                    name: "👤┆Membre :",
                     value: `${target} (${target.tag})`,
                     inline: true,
                 }
@@ -39,7 +39,7 @@ module.exports = async (client, interaction, args) => {
     }
     else {
         client.errNormal({
-            error: "Levels are disabled in this guild!",
+            error: "Le systéme de niveau est désactivé sur ce serveur !",
             type: 'editreply'
         }, interaction);
     }

@@ -10,7 +10,7 @@ module.exports = async (client, interaction, args) => {
 
     if (perms == false) {
         client.errNormal({
-            error: "You don't have the required permissions to use this command!",
+            error: "Tu n'as pas la permission nécessaire pour executer cette commande",
             type: 'editreply'
         }, interaction);
         return;
@@ -59,16 +59,16 @@ module.exports = async (client, interaction, args) => {
     })
 
     client.embed({
-        title: `🔨・Warn`,
-        desc: `You've been warned in **${interaction.guild.name}**`,
+        title: `🔨・Avertissement`,
+        desc: `Tu as été averti dans **${interaction.guild.name}**`,
         fields: [
             {
-                name: "👤┆Moderator",
+                name: "👤┆Moderateur :",
                 value: interaction.user.tag,
                 inline: true
             },
             {
-                name: "📄┆Reason",
+                name: "📄┆Réson :",
                 value: reason,
                 inline: true
             }
@@ -77,20 +77,20 @@ module.exports = async (client, interaction, args) => {
 
     client.emit('warnAdd', member, interaction.user, reason)
     client.succNormal({
-        text: `User has received a warning!`,
+        text: `Le membre a reçu un avertissement !`,
         fields: [
             {
-                name: "👤┆User",
+                name: "👤┆Membre :",
                 value: `${member}`,
                 inline: true
             },
             {
-                name: "👤┆Moderator",
+                name: "👤┆Moderateur :",
                 value: `${interaction.user}`,
                 inline: true
             },
             {
-                name: "📄┆Reason",
+                name: "📄┆Réson :",
                 value: reason,
                 inline: false
             }

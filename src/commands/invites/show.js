@@ -9,7 +9,7 @@ module.exports = async (client, interaction, args) => {
         if (data) {
             client.embed({
                 title: "📨・Invites",
-                desc: `**${user.tag}** has \`${data.Invites}\` invites`,
+                desc: `**${user.tag}** a \`${data.Invites}\` invites`,
                 fields: [
                     {
                         name: "Total",
@@ -17,7 +17,7 @@ module.exports = async (client, interaction, args) => {
                         inline: true
                     },
                     {
-                        name: "Left",
+                        name: "Partie",
                         value: `${data.Left}`,
                         inline: true
                     }
@@ -28,7 +28,7 @@ module.exports = async (client, interaction, args) => {
         else {
             client.embed({
                 title: "📨・Invites",
-                desc: `**${user.tag}** has \`0\` invites`,
+                desc: `**${user.tag}** a \`0\` invites`,
                 fields: [
                     {
                         name: "Total",
@@ -36,7 +36,7 @@ module.exports = async (client, interaction, args) => {
                         inline: true
                     },
                     {
-                        name: "Left",
+                        name: "Partie",
                         value: `0`,
                         inline: true
                     }

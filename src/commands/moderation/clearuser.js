@@ -16,10 +16,10 @@ module.exports = async (client, interaction, args) => {
             let userMessages = messages.filter((m) => m.author.id === member.id);
             await channel.bulkDelete(userMessages).then(() => {
                 client.succNormal({
-                    text: `I have successfully deleted the messages`,
+                    text: `J'ai bien supprimer ce membre`,
                     fields: [
                         {
-                            name: "👤┆User",
+                            name: "👤┆Membre :",
                             value: `${member} (${member.tag})`,
                             inline: true
                         }
@@ -34,10 +34,10 @@ module.exports = async (client, interaction, args) => {
 
     interaction.channel.bulkDelete(amount + 1).then(() => {
         client.succNormal({
-            text: `I have successfully deleted the messages`,
+            text: `J'ai bien supprimer le message`,
             fields: [
                 {
-                    name: "💬┆Amount",
+                    name: "💬┆Nombre :",
                     value: amount,
                     inline: true
                 }
@@ -48,7 +48,7 @@ module.exports = async (client, interaction, args) => {
         }, 5000));
     }).catch(err => {
         client.errNormal({
-            error: "There was an error trying to delete messages in this channel!",
+            error: "Une erreur est apparu lors de la supperssion des messages",
             type: 'editreply'
         }, interaction);
     });
