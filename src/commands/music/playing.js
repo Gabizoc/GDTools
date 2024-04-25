@@ -7,17 +7,17 @@ module.exports = async (client, interaction, args) => {
 
     const channel = interaction.member.voice.channel;
     if (!channel) return client.errNormal({
-        error: `You're not in a voice channel!`,
+        error: `Tu n'es pas dans un vocal`,
         type: 'editreply'
     }, interaction);
 
     if (player && (channel.id !== player?.voiceChannel)) return client.errNormal({
-        error: `You're not in the same voice channel!`,
+        error: `Vous n'étes pas dans le même channel`,
         type: 'editreply'
     }, interaction);
 
     if (!player || !player.queue.current) return client.errNormal({
-        error: "There are no songs playing in this server",
+        error: "<:cross:1220075609493868544> Pas de musique à jouer",
         type: 'editreply'
     }, interaction);
 
@@ -32,22 +32,22 @@ module.exports = async (client, interaction, args) => {
         thumbnail: player.queue.current?.thumbnail ? player.queue.current?.thumbnail : '',
         fields: [
             {
-                name: `👤┆Requested By`,
+                name: `👤┆Demandé par :`,
                 value: `${player.queue.current.requester}`,
                 inline: true
             },
             {
-                name: `${client.emotes.normal.clock}┆Duration`,
+                name: `${client.emotes.normal.clock}┆Durée :`,
                 value: `<t:${((Date.now() / 1000) + (player.queue.current.duration / 1000) - nowTime / 1000).toFixed(0)}:f>`,
                 inline: true
             },
             {
-                name: `${client.emotes.normal.volume}┆Volume`,
+                name: `${client.emotes.normal.volume}┆Volume :`,
                 value: `${player.volume}%`,
                 inline: true
             },
             {
-                name: `${client.emotes.normal.music}┆Progress`,
+                name: `${client.emotes.normal.music}┆Progression :`,
                 value: `${new Date(player.position).toISOString().slice(11, 19)} ┃ ` +
                     bar +
                     ` ┃ ${new Date(player.queue.current.duration).toISOString().slice(11, 19)}`,

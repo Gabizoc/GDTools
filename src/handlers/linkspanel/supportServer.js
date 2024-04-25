@@ -15,43 +15,44 @@ module.exports = async (client) => {
                             .setPlaceholder('❌┆Nothing selected')
                             .addOptions([
                                 {
-                                    label: `Support server`,
-                                    description: `Join the suppport server`,
+                                    label: `Serveur de support`,
+                                    description: `Rejoint le serveur support`,
                                     emoji: "❓",
                                     value: "support-linkspanel",
                                 },
                                 {
-                                    label: `Invite Bot`,
-                                    description: `Invite Bot to your server`,
+                                    label: `Invite le Bot`,
+                                    description: `Invite le bot à ton serveur !`,
                                     emoji: "📨",
                                     value: "invite-linkspanel",
                                 },
                                 {
-                                    label: `Community Server`,
-                                    description: `Join the community server!`,
+                                    label: `Serveur communautaire`,
+                                    description: `Rejoint le serveur communautaire`,
                                     emoji: "🌍",
                                     value: "community-linkspanel",
                                 },
                                 {
                                     label: `Top.gg`,
-                                    description: `Show the top.gg link`,
+                                    description: `Vote pour moi !`,
                                     emoji: "📃",
                                     value: "top.gg-linkspanel",
                                 },
                             ]),
                     );
 
+
                 let row = new Discord.ActionRowBuilder()
                     .addComponents(
                         new Discord.ButtonBuilder()
-                            .setLabel("Support Server")
+                            .setLabel("Serveur de support")
                             .setURL(client.config.discord.serverInvite)
                             .setStyle(Discord.ButtonStyle.Link),
                     );
 
                 client.embed({
-                    title: `❓・Support Server`,
-                    desc: `Make your server even better with Bot!`,
+                    title: `❓・Serveur Support`,
+                    desc: `Questions / Probléme suggestion c'est là-bas !`,
                     image: "https://cdn.discordapp.com/attachments/843487478881976381/874694194474668052/Bot_banner_invite.jpg",
                     url: client.config.discord.serverInvite,
                     components: [row2, row],

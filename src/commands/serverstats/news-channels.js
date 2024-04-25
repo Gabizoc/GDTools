@@ -5,7 +5,7 @@ const Schema = require("../../database/models/stats");
 module.exports = async (client, interaction, args) => {
     var channelName = await client.getTemplate(interaction.guild);
     channelName = channelName.replace(`{emoji}`, "📢")
-    channelName = channelName.replace(`{name}`, `News Channels: ${interaction.guild.channels.cache.filter(channel => channel.type ===  Discord.ChannelType.GuildAnnouncement).size || 0}`)
+    channelName = channelName.replace(`{name}`, `Channel d'Annonce : ${interaction.guild.channels.cache.filter(channel => channel.type ===  Discord.ChannelType.GuildAnnouncement).size || 0}`)
 
     await interaction.guild.channels.create({
         name: channelName,
@@ -30,10 +30,10 @@ module.exports = async (client, interaction, args) => {
         })
         
         client.succNormal({
-            text: `News channel count created!`,
+            text: `Compteur de channel d'annonce créé !`,
             fields: [
                 {
-                    name: `📘┆Channel`,
+                    name: `📘┆Channel :`,
                     value: `${channel}`
                 }
             ],

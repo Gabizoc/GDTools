@@ -35,10 +35,10 @@ module.exports = (client) => {
         content: content,
         components: components
     }, interaction) {
-        embed.setTitle(`${client.emotes.normal.error}・Error!`)
-        embed.setDescription(`Something went wrong!`)
+        embed.setTitle(`${client.emotes.normal.error}・Erreur!`)
+        embed.setDescription(`Il y a eu une erreur !`)
         embed.addFields( 
-            { name: "💬┆Error comment", value: `\`\`\`${error}\`\`\``},
+            { name: "💬┆Commentaire :", value: `\`\`\`${error}\`\`\``},
         )
         embed.setColor(client.config.colors.error)
 
@@ -58,7 +58,7 @@ module.exports = (client) => {
         content: content,
         components: components
     }, interaction) {
-        embed.setTitle(`${client.emotes.normal.error}・Error!`)
+        embed.setTitle(`${client.emotes.normal.error}・Erreur!`)
         embed.setDescription(`You did not provide the correct arguments`)
         embed.addFields(
             { name: "💬┆Required arguments", value: `\`\`\`${usage}\`\`\``},    

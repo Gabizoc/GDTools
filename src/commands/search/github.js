@@ -7,7 +7,7 @@ module.exports = async (client, interaction, args) => {
 
     const r = await pop.github(name).catch(() => {
         return client.errNormal({
-            error: `No account found with the username: ${name}`,
+            error: `Impossible de trouvé un compte comme nom : ${name}`,
             type: 'editreply'
         }, interaction)
     
@@ -19,27 +19,27 @@ module.exports = async (client, interaction, args) => {
         url: r.url,
         fields: [
             {
-                name: "💬┇Name",
+                name: "💬┇Nom :",
                 value: `${r.name}`,
                 inline: true,
             },
             {
-                name: "🧑‍💼┇Company",
+                name: "🧑‍💼┇Groupe :",
                 value: `${r.company}`,
                 inline: true,
             },
             {
-                name: "💬┇Bio",
+                name: "💬┇Bio :",
                 value: `${r.bio}`,
                 inline: true,
             },
             {
-                name: "📁┇Public Repositories",
+                name: "📁┇Reposites :",
                 value: `${r.public_repos}`,
                 inline: true,
             },
             {
-                name: "⏰┇Created At",
+                name: "⏰┇Créer le :",
                 value: `<t:${Math.round(new Date(r.created_at).getTime() / 1000)}>`,
                 inline: true,
             },

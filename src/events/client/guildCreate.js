@@ -24,13 +24,13 @@ module.exports = async (client, guild) => {
             .then(async (results) => {
                 const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
                 const embed = new Discord.EmbedBuilder()
-                    .setTitle("🟢・Added to a new server!")
+                    .setTitle("🟢・Ajout sur un nouveau serveur !")
                     .addFields(
-                        { name: "Total servers:", value: `${totalGuilds}`, inline: true },
-                        { name: "Server name", value: `${guild.name}`, inline: true },
-                        { name: "Server ID", value: `${guild.id}`, inline: true },
-                        { name: "Server members", value: `${guild.memberCount}`, inline: true },
-                        { name: "Server owner", value: `<@!${guild.ownerId}> (${guild.ownerId})`, inline: true },
+                        { name: "Total de serveur :", value: `${totalGuilds}`, inline: true },
+                        { name: "Nom du serveur :", value: `${guild.name}`, inline: true },
+                        { name: "Id du serveur :", value: `${guild.id}`, inline: true },
+                        { name: "Nombre de membre :", value: `${guild.memberCount}`, inline: true },
+                        { name: "Propiétaire du serveur :", value: `<@!${guild.ownerId}> (${guild.ownerId})`, inline: true },
                     )
                     .setThumbnail("https://cdn.discordapp.com/attachments/843487478881976381/852419422392156210/BotPartyEmote.png")
                     .setColor(client.config.colors.normal)
@@ -53,37 +53,37 @@ module.exports = async (client, guild) => {
         let row = new Discord.ActionRowBuilder()
             .addComponents(
                 new Discord.ButtonBuilder()
-                    .setLabel("Invite")
+                    .setLabel("Invite moi !")
                     .setURL(client.config.discord.botInvite)
                     .setStyle(Discord.ButtonStyle.Link),
 
                 new Discord.ButtonBuilder()
-                    .setLabel("Support server")
+                    .setLabel("Serveur Support")
                     .setURL(client.config.discord.serverInvite)
                     .setStyle(Discord.ButtonStyle.Link),
             );
 
         client.embed({
-            title: "Thanks for inviting the bot!",
+            title: "Merci de m'avoir invité !",
             image: "https://cdn.discordapp.com/attachments/843487478881976381/874694194474668052/bot_banner_invite.jpg",
             fields: [{
-                name: "❓┆How to setup?",
-                value: 'The default prefix = \`/\` \nTo run setups with Bot run \`/setup\`',
+                name: "❓┆Comment me configuré en place ?",
+                value: 'Le prefix par default est \`/\` \nPour commencer la configuration : \`/setup\`',
                 inline: false,
             },
             {
-                name: "☎️┆I need help what now?",
-                value: `You can DM <@755297485328482356> for support or joining the [[Support server]](${client.config.discord.serverInvite})`,
+                name: "☎️┆Tu as besoin d'aide ?",
+                value: `Tu peux contacter le support via le serveur : [Serveur Support](${client.config.discord.serverInvite})`,
                 inline: false,
             },
             {
-                name: "💻┆What are the commands?",
-                value: 'See that list of commands by doing \`/help\`',
+                name: "💻┆Les commandes ?",
+                value: 'Tu peux voir toutes les commandes en faisant : \`/help\`',
                 inline: false,
             },
             {
-                name: "📨┆Invite the bot!",
-                value: `Invite the bot to click [[HERE]](${client.config.discord.botInvite})`,
+                name: "📨┆Invite moi !",
+                value: `Invite moi en cliquant [ici](${client.config.discord.botInvite})`,
                 inline: false,
             },
             ],

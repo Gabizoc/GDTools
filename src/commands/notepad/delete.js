@@ -10,11 +10,11 @@ module.exports = async (client, interaction, args) => {
     Schema.findOne({ Guild: interaction.guild.id, Code: id }, async (err, data) => {
         if (data) {
             Schema.findOneAndDelete({ Guild: interaction.guild.id, Code: id }).then(() => {
-                client.succNormal({ text: `Note **#${id}** has been deleted!`, type: 'editreply' }, interaction);
+                client.succNormal({ text: `La note **#${id}** a été supprimer`, type: 'editreply' }, interaction);
             })
         }
         else {
-            client.errNormal({ error: `No note found with the id **#${id}**`, type: 'editreply' }, interaction);
+            client.errNormal({ error: `Auccun note n'a été trouvé avec l'Id : **#${id}**`, type: 'editreply' }, interaction);
         }
     })
 }

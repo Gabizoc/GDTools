@@ -5,24 +5,24 @@ module.exports = async (client, interaction, args) => {
     
     const channel = interaction.member.voice.channel;
     if (!channel) return client.errNormal({
-        error: `You're not in a voice channel!`,
+        error: `Tu n'es pas dans un vocal`,
         type: 'editreply'
     }, interaction);
 
     if (player && (channel.id !== player?.voiceChannel)) return client.errNormal({
-        error: `You're not in the same voice channel!`,
+        error: `Vous n'étes pas dans le même channel`,
         type: 'editreply'
     }, interaction);
 
     if (!player || !player.queue.current) return client.errNormal({
-        error: "There are no songs playing in this server",
+        error: "<:cross:1220075609493868544> Pas de musique à jouer",
         type: 'editreply'
     }, interaction);
 
     player.pause(false)
 
     client.succNormal({
-        text: `Resumed the music!`,
+        text: `Reprise de la musique !`,
         type: 'editreply'
     }, interaction);
 }

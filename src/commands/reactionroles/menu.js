@@ -11,7 +11,7 @@ module.exports = async (client, interaction, args) => {
 
     Schema.findOne({ Guild: interaction.guild.id, Category: category }, async (err, data) => {
         if (!data) return client.errNormal({ 
-            error: `No data found!`,
+            error: `Pas de donné trouvé !`,
             type: 'editreply'
         }, interaction);
 
@@ -25,7 +25,7 @@ module.exports = async (client, interaction, args) => {
 
         const menu = new Discord.StringSelectMenuBuilder()
             .setCustomId('reaction_select')
-            .setPlaceholder('❌┇Nothing selected')
+            .setPlaceholder('❌┇Rien séléctioné')
             .setMinValues(1)
 
         var labels = [];
@@ -50,13 +50,13 @@ module.exports = async (client, interaction, args) => {
             .addComponents(menu)
 
         client.embed({
-            title: `${upper}・Roles`,
-            desc: `_____ \n\nChoose your roles in the menu! \n\n${map}`,
+            title: `${upper}・Rôles`,
+            desc: `_____ \n\nPrenez vos rôles ici \n\n${map}`,
             components: [row]
         }, channel).then(async(msg) => {
             if(!msg){
                 client.errNormal({
-                    error: "I couldn't send the message!\nMake sure I have the correct permissions!",
+                    error: "Impossible d'envoyé le message !\nIl me faut les bonnes permissions !",
                     type: 'editreply'
                 }, interaction);
                 return;
@@ -66,7 +66,7 @@ module.exports = async (client, interaction, args) => {
         })
 
         client.succNormal({ 
-            text: "Reaction panel successfully created!",
+            text: "Panel bien généré !",
             type: 'ephemeraledit'
         }, interaction);
     })

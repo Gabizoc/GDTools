@@ -2,14 +2,14 @@ const discord = require('discord.js');
 
 module.exports = async (client, event) => {
     let types = {
-        GUILD_ONLY: "Server only",
+        GUILD_ONLY: "Disponible que pour les serveurs uniquement !",
         PUBLIC: "Public",
     }
 
     let locations = {
         NONE: "None",
-        STAGE_INSTANCE: "Stage Channel",
-        VOICE: "Voice Channel",
+        STAGE_INSTANCE: "Conférence :",
+        VOICE: "Vocal :",
         EXTERNAL: `External`
     }
 
@@ -17,35 +17,35 @@ module.exports = async (client, event) => {
     if (!logsChannel) return;
 
     client.embed({
-        title: `🎡・Event created`,
-        desc: `An event has been created`,
+        title: `🎡・Evènement créé !`,
+        desc: `un évènement a été créé !`,
         fields: [
             {
-                name: `> Name`,
+                name: `> Nom :`,
                 value: `- ${event.name}`
             },
             {
-                name: `> Description`,
+                name: `> Description :`,
                 value: `- ${event.description || 'None'}`
             },
             {
-                name: `> Start`,
+                name: `> Commence :`,
                 value: `- <t:${(event.scheduledStartTimestamp / 1000).toFixed(0)}>`
             },
             {
-                name: `> Privacy`,
+                name: `> Confidentialité :`,
                 value: `- ${types[event.privacyLevel]}`
             },
             {
-                name: `> Creator`,
+                name: `> Createur :`,
                 value: `- <@!${event.creatorId}> (${event.creatorId})`
             },
             {
-                name: `> Location type`,
+                name: `> Location :`,
                 value: `- ${locations[event.entityType]}`
             },
             {
-                name: `> Timestamp`,
+                name: `> Heure :`,
                 value: `- <t:${Math.floor(Date.now() / 1000)}:R>`
             }
         ]

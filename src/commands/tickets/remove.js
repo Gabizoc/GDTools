@@ -18,7 +18,7 @@ module.exports = async (client, interaction, args) => {
         const ticketCategory = interaction.guild.channels.cache.get(data.Category);
         if (ticketCategory == undefined) {
             return client.errNormal({
-                error: "Do the ticket setup!",
+                error: "Active le systéme de ticket d'abord!",
                 type: 'editreply'
             }, interaction)
         }
@@ -27,7 +27,7 @@ module.exports = async (client, interaction, args) => {
             let user = interaction.options.getUser('user');
             if (ticketData && user.id == ticketData.creator) {
                 return client.errNormal({ 
-                    error: "You cannot remove the ticket maker from this ticket", 
+                    error: "Vous ne pouvez pas supprimer le créateur de ce ticket", 
                     type: 'ephemeraledit' 
                 }, interaction)
             }
@@ -35,13 +35,13 @@ module.exports = async (client, interaction, args) => {
             interaction.channel.permissionOverwrites.edit(user.id, { ViewChannel: false, SendMessages: false });
 
             return client.simpleEmbed({
-                desc: `Removed ${user}`,
+                desc: `Suppression de ${user}`,
                 type: 'editreply'
             }, interaction)
         }
         else {
             client.errNormal({ 
-                error: "This is not a ticket!", 
+                error: "Ce n'est pas un ticket !", 
                 type: 'editreply' 
             }, interaction)
         }

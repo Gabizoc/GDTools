@@ -5,23 +5,23 @@ module.exports = async (client, oldEmoji, newEmoji) => {
     if (!logsChannel) return;
 
     client.embed({
-        title: `😛・Emoji updated`,
-        desc: `An emoji has been updated`,
+        title: `😛・Emoji mis à jour :`,
+        desc: `Un emoji a été mis à jour !`,
         fields: [
             {
-                name: `> Emoji`,
+                name: `> Emoji :`,
                 value: `- ${newEmoji}`
             },
             {
-                name: `> Before`,
+                name: `> Avant :`,
                 value: `- ${oldEmoji.name}`
             },
             {
-                name: `> After`,
+                name: `> Après :`,
                 value: `- ${newEmoji.name}`
             },
             {
-                name: `> ID`,
+                name: `> ID :`,
                 value: `- ${newEmoji.id}`
             }
         ]

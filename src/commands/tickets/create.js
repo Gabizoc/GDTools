@@ -5,8 +5,8 @@ const ticketChannels = require("../../database/models/ticketChannels");
 const ticketMessageConfig = require("../../database/models/ticketMessage");
 
 module.exports = async (client, interaction, args) => {
-    let reason = "Not given";
-    if (interaction.options) reason = interaction.options.getString('reason') || "Not given";
+    let reason = "Non donné";
+    if (interaction.options) reason = interaction.options.getString('reason') || "Non donné";
 
     let type = 'reply';
     if (interaction.isCommand()) type = 'editreply';
@@ -15,12 +15,12 @@ module.exports = async (client, interaction, args) => {
         if (data) {
             if (interaction.isCommand()) {
                 return client.errNormal({
-                    error: "Ticket limit reached. 1/1",
+                    error: "Limite de ticket 1/1",
                     type: 'ephemeraledit'
                 }, interaction);
             }
             else return client.errNormal({
-                error: "Ticket limit reached. 1/1",
+                error: "Limite de ticket 1/1",
                 type: 'ephemeral'
             }, interaction);
         }
@@ -33,7 +33,7 @@ module.exports = async (client, interaction, args) => {
                     let role = interaction.guild.roles.cache.find(r => r.id === ticketRole.id);
 
                     try {
-                        var openTicket = "Thanks for creating a ticket! \nSupport will be with you shortly \n\n🔒 - Close ticket \n✋ - Claim ticket \n📝 - Save transcript \n🔔 - Send a notification";
+                        var openTicket = "Merci d'avoir créé un ticket \nLe support arrivera dé que possible \n\n🔒 - Fermé \n✋ - Gérer \n📝 - Transcrire \n🔔 - Notifié";
                         let ticketMessageData = await ticketMessageConfig.findOne({ Guild: interaction.guild.id });
                         if (ticketMessageData) {
                             openTicket = ticketMessageData.openTicket;
@@ -63,8 +63,8 @@ module.exports = async (client, interaction, args) => {
                             );
 
                         client.embed({
-                            title: `${client.emotes.animated.loading}・Progress`,
-                            desc: `Your ticket is being created...`,
+                            title: `${client.emotes.animated.loading}・Progression`,
+                            desc: `Votre ticket est entrain de se créé...`,
                             type: 'ephemeral'
                         }, interaction).then((msg) => {
 
@@ -79,7 +79,7 @@ module.exports = async (client, interaction, args) => {
 
                             if (ticketCategory == undefined) {
                                 return client.errNormal({
-                                    error: "Do the setup!",
+                                    error: "Active le systéme de ticket d'abord!",
                                     type: type
                                 }, interaction);
                             }
@@ -116,21 +116,21 @@ module.exports = async (client, interaction, args) => {
                                     parent: category.id
                                 }).then(async channel => {
                                     client.embed({
-                                        title: `⚙️・System`,
-                                        desc: `Ticket has been created`,
+                                        title: `⚙️・Systéme`,
+                                        desc: `Un ticket a été créé !`,
                                         fields: [
                                             {
-                                                name: "👤┆Creator",
+                                                name: "👤┆Createur :",
                                                 value: `${interaction.user}`,
                                                 inline: true
                                             },
                                             {
-                                                name: "📂┆Channel",
+                                                name: "📂┆Channel :",
                                                 value: `${channel}`,
                                                 inline: true
                                             },
                                             {
-                                                name: "⏰┆Created at",
+                                                name: "⏰┆Créé le :",
                                                 value: `<t:${(Date.now() / 1000).toFixed(0)}:f>`,
                                                 inline: true
                                             }
@@ -148,21 +148,21 @@ module.exports = async (client, interaction, args) => {
 
                                     if (logsChannel) {
                                         client.embed({
-                                            title: `📝・Open ticket`,
-                                            desc: `A new ticket has been created`,
+                                            title: `📝・Ticket ouvert`,
+                                            desc: `Un nouveau ticket a été créé`,
                                             fields: [
                                                 {
-                                                    name: "👤┆Creator",
+                                                    name: "👤┆Createur :",
                                                     value: `${interaction.user.tag} (${interaction.user.id})`,
                                                     inline: false
                                                 },
                                                 {
-                                                    name: "📂┆Channel",
-                                                    value: `${channel.name} is found at ${channel}`,
+                                                    name: "📂┆Channel :",
+                                                    value: `${channel.name} dans ${channel}`,
                                                     inline: false
                                                 },
                                                 {
-                                                    name: "⏰┆Created at",
+                                                    name: "⏰┆Créé par",
                                                     value: `<t:${(Date.now() / 1000).toFixed(0)}:F>`,
                                                     inline: false
                                                 }
@@ -174,17 +174,17 @@ module.exports = async (client, interaction, args) => {
                                         desc: openTicket,
                                         fields: [
                                             {
-                                                name: "👤┆Creator",
+                                                name: "👤┆Createur",
                                                 value: `${interaction.user}`,
                                                 inline: true
                                             },
                                             {
-                                                name: "📄┆Subject",
+                                                name: "📄┆Sujet :",
                                                 value: `${reason}`,
                                                 inline: true
                                             },
                                             {
-                                                name: "⏰┆Created at",
+                                                name: "⏰┆Créé le :",
                                                 value: `<t:${(Date.now() / 1000).toFixed(0)}:F>`,
                                                 inline: true
                                             }
@@ -200,7 +200,7 @@ module.exports = async (client, interaction, args) => {
                     }
                     catch (err) {
                         client.errNormal({
-                            error: "Do the setup!",
+                            error: "Active le systéme de ticket d'abord!",
                             type: type
                         }, interaction);
                         console.log(err);
@@ -208,7 +208,7 @@ module.exports = async (client, interaction, args) => {
                 }
                 else {
                     return client.errNormal({
-                        error: "Do the setup!",
+                        error: "Active le systéme de ticket d'abord!",
                         type: type
                     }, interaction);
                 }

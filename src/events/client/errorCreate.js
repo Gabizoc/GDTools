@@ -16,14 +16,14 @@ module.exports = (client, err, command, interaction) => {
     let embed = new Discord.EmbedBuilder()
         .setTitle(`🚨・${password}`)
         .addFields(
-            { name: "✅┇Guild", value: `${interaction.guild.name} (${interaction.guild.id})`},
-            { name: `💻┇Command`, value: `${command}`},
-            { name: `💬┇Error`, value: `\`\`\`${err}\`\`\``},
-            { name: `📃┇Stack error`, value: `\`\`\`${err.stack.substr(0, 1018)}\`\`\``},
+            { name: "✅┇Serveur :", value: `${interaction.guild.name} (${interaction.guild.id})`},
+            { name: `💻┇Commande :`, value: `${command}`},
+            { name: `💬┇Erreur :`, value: `\`\`\`${err}\`\`\``},
+            { name: `📃┇Erreur via console :`, value: `\`\`\`${err.stack.substr(0, 1018)}\`\`\``},
         )
         .setColor(client.config.colors.normal)
     errorlog.send({
-        username: `Bot errors`,
+        username: `Erreurs`,
         embeds: [embed],
 
     }).catch(error => { console.log(error) })
@@ -31,24 +31,24 @@ module.exports = (client, err, command, interaction) => {
     let row = new Discord.ActionRowBuilder()
         .addComponents(
             new Discord.ButtonBuilder()
-                .setLabel("Support server")
+                .setLabel("Serveur Support")
                 .setURL(client.config.discord.serverInvite)
                 .setStyle(Discord.ButtonStyle.Link),
         );
 
     client.embed({
-        title: `${client.emotes.normal.error}・Error`,
-        desc: `There was an error executing this command`,
+        title: `${client.emotes.normal.error}・Erreur`,
+        desc: `Une érreur est apparu lors de l'execution de la commande`,
         color: client.config.colors.error,
         fields: [
             {
-                name: `Error code`,
+                name: `Code d'erreur :`,
                 value: `\`${password}\``,
                 inline: true,
             },
             {
-                name: `What now?`,
-                value: `You can contact the developers by joining the support server`,
+                name: `Que faire ?`,
+                value: `Tu peux contacter le developpeur via le serveur support`,
                 inline: true,
             }
         ],
@@ -56,18 +56,18 @@ module.exports = (client, err, command, interaction) => {
         type: 'editreply'
     }, interaction).catch(() => {
         client.embed({
-            title: `${client.emotes.normal.error}・Error`,
-            desc: `There was an error executing this command`,
+            title: `${client.emotes.normal.error}・Erreur`,
+            desc: `Une érreur est apparu lors de l'execution de la commande`,
             color: client.config.colors.error,
             fields: [
                 {
-                    name: `Error code`,
+                    name: `Code d'erreur :`,
                     value: `\`${password}\``,
                     inline: true,
                 },
                 {
-                    name: `What now?`,
-                    value: `You can contact the developers by joining the support server`,
+                    name: `Que faire ?`,
+                    value: `Tu peux contacter le developpeur via le serveur support`,
                     inline: true,
                 }
             ],

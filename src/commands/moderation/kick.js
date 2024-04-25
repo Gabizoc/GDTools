@@ -9,7 +9,7 @@ module.exports = async (client, interaction, args) => {
   if (perms == false) return;
 
   const member = await interaction.guild.members.fetch(interaction.options.getUser('user').id);
-  const reason = interaction.options.getString('reason') || 'Not given';
+  const reason = interaction.options.getString('reason') || 'Non donné';
 
   if (member.permissions.has(Discord.PermissionsBitField.Flags.KickMembers) || member.permissions.has(Discord.PermissionsBitField.Flags.KickMembers)) return client.errNormal({
     error: "Tu ne peux pas explusé un modérateur !",

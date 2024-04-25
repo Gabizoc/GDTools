@@ -12,7 +12,7 @@ module.exports = async (client, interaction) => {
         banSchema.findOne({ User: interaction.user.id }, async (err, data) => {
             if (data) {
                 return client.errNormal({
-                    error: "You have been banned by the developers of this bot",
+                    error: "Tu as été banni par le devlopper du bot !",
                     type: 'ephemeral'
                 }, interaction);
             }
@@ -45,11 +45,11 @@ module.exports = async (client, interaction) => {
                             );
                         } else if (cmdx.Action == "DM") {
                             await interaction.deferReply({ ephemeral: true });
-                            interaction.editReply({ content: "I have sent you something in your DMs" });
+                            interaction.editReply({ content: "Je t'ai envoyé quelque chose dans tes DM" });
                             return interaction.user.send({ content: cmdx.Responce }).catch((e) => {
                                 client.errNormal(
                                     {
-                                        error: "I can't DM you, maybe you have DM turned off!",
+                                        error: "Je ne peux pas vous envoyer de mesage, peut-être que vous avez désactivé DM !",
                                         type: 'ephemeral'
                                     },
                                     interaction,
@@ -62,8 +62,8 @@ module.exports = async (client, interaction) => {
                     const commands = interaction.client.commands.filter(x => x.data.name == interaction.commandName).map((x) => x.data.options.map((c) => '`' + c.name + '` - ' + c.description).join("\n"));
 
                     return client.embed({
-                        title: `❓・Help panel`,
-                        desc: `Get help with the commands in \`${interaction.commandName}\` \n\n${commands}`,
+                        title: `❓・Panel d'aide`,
+                        desc: `Obtenez de l'aide sur les commandes dans \`${interaction.commandName}\` \n\n${commands}`,
                         type: 'reply'
                     }, interaction)
                 }
@@ -93,7 +93,7 @@ module.exports = async (client, interaction) => {
                             msg.delete();
 
                             client.succNormal({
-                                text: "You have been successfully verified!"
+                                text: "Tu as bien été vérifié !"
                             }, interaction.user).catch(error => { })
 
                             var verifyUser = interaction.guild.members.cache.get(interaction.user.id);
@@ -104,7 +104,7 @@ module.exports = async (client, interaction) => {
                             msg.delete();
 
                             client.errNormal({
-                                error: "You have answered the captcha incorrectly!",
+                                error: "Ta réponse au captcha est invalide !",
                                 type: 'editreply'
                             }, interaction).then(msgError => {
                                 setTimeout(() => {
@@ -121,7 +121,7 @@ module.exports = async (client, interaction) => {
         }
         else {
             client.errNormal({
-                error: "Verify is disabled in this server! Or you are using the wrong channel!",
+                error: "Vérifiez que le captcha est bien activé sur ce serveur ! Ou vous utilisez le mauvais canal !",
                 type: 'ephemeral'
             }, interaction);
         }
@@ -140,12 +140,12 @@ module.exports = async (client, interaction) => {
                 if (interaction.member.roles.cache.get(roleid)) {
                     interaction.guild.members.cache.get(interaction.user.id).roles.remove(roleid).catch(error => { })
 
-                    interaction.reply({ content: `<@&${roleid}> was removed!`, ephemeral: true });
+                    interaction.reply({ content: `Le rôle <@&${roleid}> ta bien été supprimé !`, ephemeral: true });
                 }
                 else {
                     interaction.guild.members.cache.get(interaction.user.id).roles.add(roleid).catch(error => { })
 
-                    interaction.reply({ content: `<@&${roleid}> was added!`, ephemeral: true });
+                    interaction.reply({ content: `Le rôle <@&${roleid}> ta bien été ajouté !`, ephemeral: true });
                 }
             })
         }
@@ -180,7 +180,7 @@ module.exports = async (client, interaction) => {
 
                         if ((i + 1) === interaction.values.length) {
                             interaction.reply({
-                                content: `I have updated the following roles for you: ${roles}`,
+                                content: `J'ai mis à jour les rôles suivants pour toi : ${roles}`,
                                 ephemeral: true,
                             });
                         }

@@ -15,15 +15,15 @@ module.exports = async (client, interaction, args) => {
     var remove = await Schema.deleteOne({ Guild: interaction.guild.id });
 
     client.embed({
-        title: `📻・Radio stopped`,
-        desc: `Radio has stopped successfully \nTo make the bot join do: \`rplay\``,
+        title: `📻・Radio arreté`,
+        desc: `La radio s'est bien stopper \nPour la relancer faire \`/radio play\``,
         fields: [{
-            name: "👤┆Stopped By",
+            name: "👤┆Stoppé par :",
             value: `${interaction.user} (${interaction.user.tag})`,
             inline: true
         },
         {
-            name: "📺┆Channel",
+            name: "📺┆Channel :",
             value: `${channel} (${channel.name})`,
             inline: true
         }
@@ -32,12 +32,12 @@ module.exports = async (client, interaction, args) => {
     }, interaction)
 
     let embed = new Discord.EmbedBuilder()
-        .setTitle(`📻・Radio stopped`)
-        .setDescription(`_______________ \n\nRadio has stopped successfully`)
+        .setTitle(`📻・Radio arreté`)
+        .setDescription(`_______________ \n\nLa radio s'est bien stopper`)
         .addFields(
-            { name: "👤┆Stopped By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
-            { name: "📺┆Channel", value: `${channel} (${channel.name})`, inline: true },
-            { name: "⚙️┆Guild", value: `${interaction.guild.name} (${interaction.guild.id})`, inline: true },
+            { name: "👤┆Stoppé par :", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
+            { name: "📺┆Channel :", value: `${channel} (${channel.name})`, inline: true },
+            { name: "⚙️┆Serveur :", value: `${interaction.guild.name} (${interaction.guild.id})`, inline: true },
         )
         .setColor(client.config.colors.normal)
         .setTimestamp();

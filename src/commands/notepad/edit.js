@@ -11,10 +11,10 @@ module.exports = async (client, interaction, args) => {
             data.Note = note
             data.save();
 
-            client.succNormal({ text: "Note has been edited!", type: 'editreply' }, interaction);
+            client.succNormal({ text: "La note a été modifié !", type: 'editreply' }, interaction);
         }
         else {
-            client.errNormal({ error: `No note found!`, type: 'editreply' }, interaction);
+            client.errNormal({ error: `Auccun note trouvé !`, type: 'editreply' }, interaction);
         }
     })
 }

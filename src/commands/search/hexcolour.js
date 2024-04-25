@@ -9,7 +9,7 @@ module.exports = async (client, interaction, args) => {
         `https://some-random-api.com/canvas/rgb?hex=${color}`
     ).catch(e => {
         return client.errNormal({ 
-            error: "Color not found!",
+            error: "Coleur introuvable",
             type: 'editreply'
         }, interaction)
     });
@@ -20,12 +20,12 @@ module.exports = async (client, interaction, args) => {
         color: `#${color}`,
         fields: [
             {
-                name: "Hex",
+                name: "Hex code :",
                 value: `#${color}`,
                 inline: true,
             },
             {
-                name: "RGB",
+                name: "RGB code :",
                 value: `${data.r}, ${data.g}, ${data.b}`,
                 inline: true,
             }

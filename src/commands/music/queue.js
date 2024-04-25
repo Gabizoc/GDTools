@@ -5,17 +5,17 @@ module.exports = async (client, interaction, args) => {
 
     const channel = interaction.member.voice.channel;
     if (!channel) return client.errNormal({
-        error: `You're not in a voice channel!`,
+        error: `Tu n'es pas dans un vocal`,
         type: 'editreply'
     }, interaction);
 
     if (player && (channel.id !== player?.voiceChannel)) return client.errNormal({
-        error: `You're not in the same voice channel!`,
+        error: `Vous n'étes pas dans le même channel`,
         type: 'editreply'
     }, interaction);
 
     if (!player || !player.queue.current) return client.errNormal({
-        error: "There are no songs playing in this server",
+        error: "<:cross:1220075609493868544> Pas de musique à jouer",
         type: 'editreply'
     }, interaction);
 
@@ -23,12 +23,12 @@ module.exports = async (client, interaction, args) => {
     let status;
 
     if (player.queue.length == 0) {
-        status = "No more music in the queue";
+        status = "Il n'y as plus de musique dans la liste d'attente !";
     }
     else {
         status = player.queue.map((track) => {
             count += 1;
-            return (`**[#${count}]**┆${track.title.length >= 45 ? `${track.title.slice(0, 45)}...` : track.title} (Requested by <@!${track.requester.id}>)`);
+            return (`**[#${count}]**┆${track.title.length >= 45 ? `${track.title.slice(0, 45)}...` : track.title} (Demandé par <@!${track.requester.id}>)`);
         }).join("\n");
     }
 
@@ -36,13 +36,13 @@ module.exports = async (client, interaction, args) => {
     else thumbnail = interaction.guild.iconURL({ size: 1024 });
 
     client.embed({
-        title: `${client.emotes.normal.music}・Songs queue - ${interaction.guild.name}`,
+        title: `${client.emotes.normal.music}・Liste d'attente - ${interaction.guild.name}`,
         desc: status,
         thumbnail: thumbnail,
         fields: [
             {
-                name: `${client.emotes.normal.music} Current song:`,
-                value: `${player.queue.current.title} (Requested by <@!${player.queue.current.requester.id}>)`
+                name: `${client.emotes.normal.music} Musique en cours :`,
+                value: `${player.queue.current.title} (Démandé par <@!${player.queue.current.requester.id}>)`
             }
         ],
         type: 'editreply'

@@ -52,7 +52,7 @@ module.exports = async (client, member) => {
 
                         await client.embed({
                             title: `👋・Bye`,
-                            desc: `**${member.user.tag}** has left us`
+                            desc: `**${member.user.tag}** nous as quitté ...`
                         }, channel).catch(() => { })
                     }
                 })
@@ -64,7 +64,7 @@ module.exports = async (client, member) => {
 
                     await client.embed({
                         title: `👋・Bye`,
-                        desc: `**${member.user.tag}** was invited by ${user.tag}`
+                        desc: `**${member.user.tag}** avait été invité par ${user.tag}`
                     }, channel).catch(() => { })
 
                 }).catch(async () => {
@@ -74,7 +74,7 @@ module.exports = async (client, member) => {
 
                         await client.embed({
                             title: `👋・Bye`,
-                            desc: `**${member.user.tag}** was invited by ${user.tag}`
+                            desc: `**${member.user.tag}** avait été invité par ${user.tag}`
                         }, channel).catch(() => { })
                     }
                 })
@@ -88,7 +88,7 @@ module.exports = async (client, member) => {
 
             await client.embed({
                 title: `👋・Bye`,
-                desc: `**${member.user.tag}** has left us`
+                desc: `**${member.user.tag}** nous as quitté ...`
             }, channel).catch(() => { })
         }
     }

@@ -8,7 +8,7 @@ module.exports = async (client, interaction, args) => {
     const time = interaction.options.getString("timezone");
 
     if (!momentTimezone.tz.zone(time)) return client.errNormal({
-        error: `Timezone is not valid`,
+        error: `La "timezone" n'est pas valide`,
         type: 'editreply'
     }, interaction)
 
@@ -34,10 +34,10 @@ module.exports = async (client, interaction, args) => {
         }).save();
 
         client.succNormal({
-            text: `Voice channel count created!`,
+            text: `L'heure à bien été créé !`,
             fields: [
                 {
-                    name: `📘┆Channel`,
+                    name: `📘┆Channel :`,
                     value: `${channel}`
                 }
             ],

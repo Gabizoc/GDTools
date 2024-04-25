@@ -22,20 +22,20 @@ module.exports = async (client, interaction, args) => {
 
                     if (ticketCategory == undefined) {
                         return client.errNormal({
-                            error: "Do the setup!",
+                            error: "Active le systéme de ticket d'abord!",
                             type: type
                         }, interaction);
                     }
 
                     if (interaction.channel.parentId == ticketCategory.id) {
                         return client.simpleEmbed({
-                            desc: `${client.emotes.animated.loading}・Transcript saving...`,
+                            desc: `${client.emotes.animated.loading}・Transcription en cours ...`,
                             type: type
                         }, interaction).then(async (editMsg) => {
                             client.transcript(interaction, interaction.channel).then(() => {
 
                                 return client.simpleEmbed({
-                                    desc: `Transcript saved`,
+                                    desc: `Transcription créé`,
                                     type: 'editreply'
                                 }, interaction)
 
@@ -44,7 +44,7 @@ module.exports = async (client, interaction, args) => {
                     }
                     else {
                         client.errNormal({
-                            error: "This is not a ticket!",
+                            error: "Ce n'est pas un ticket !",
                             type: type
                         }, interaction);
 
@@ -52,7 +52,7 @@ module.exports = async (client, interaction, args) => {
                 }
                 else {
                     return client.errNormal({
-                        error: "Do the setup!",
+                        error: "Active le systéme de ticket d'abord!",
                         type: type
                     }, interaction);
                 }

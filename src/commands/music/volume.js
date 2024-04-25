@@ -5,41 +5,41 @@ module.exports = async (client, interaction, args) => {
 
     const channel = interaction.member.voice.channel;
     if (!channel) return client.errNormal({
-        error: `You're not in a voice channel!`,
+        error: `Tu n'es pas dans un vocal`,
         type: 'editreply'
     }, interaction);
 
     if (player && (channel.id !== player?.voiceChannel)) return client.errNormal({
-        error: `You're not in the same voice channel!`,
+        error: `Vous n'étes pas dans le même channel`,
         type: 'editreply'
     }, interaction);
 
     if (!player || !player.queue.current) return client.errNormal({
-        error: "There are no songs playing in this server",
+        error: "<:cross:1220075609493868544> Pas de musique à jouer",
         type: 'editreply'
     }, interaction);
 
     let amount = interaction.options.getNumber('amount');
 
     if (!amount) return client.simpleEmbed({
-        desc: `${client.emotes.normal.volume}┆Current volume is **${player.volume}%**`,
+        desc: `${client.emotes.normal.volume}┆Le volume est à **${player.volume}%**`,
         type: 'editreply'
     }, interaction);
 
     if (isNaN(amount) || amount === 'Infinity') return client.errNormal({
-        text: `Please enter a valid number!`,
+        text: `Entrer un vrai nombre !`,
         type: 'editreply'
     }, interaction);
 
     if (Math.round(parseInt(amount)) < 1 || Math.round(parseInt(amount)) > 1000) return client.errNormal({
-        text: "Volume cannot exceed 1000%",
+        text: "Le volume ne peux pas dépasser 1000%",
         type: 'editreply'
     }, interaction);
 
     player.setVolume(parseInt(amount))
 
     client.succNormal({
-        text: `Volume set to **${amount}%**`,
+        text: `Le volume a été mit sur **${amount}%**`,
         type: 'editreply'
     }, interaction);
 }

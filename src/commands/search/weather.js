@@ -6,7 +6,7 @@ module.exports = async (client, interaction, args) => {
 
     weather.find({ search: country, degreeType: 'C' }, function (error, result) {
         if (result === undefined || result.length === 0) return client.errNormal({
-            error: "**Invalid** location",
+            error: "Emplacement **Invalide**",
             type: 'editreply'
         }, interaction);
 
@@ -14,37 +14,37 @@ module.exports = async (client, interaction, args) => {
         var location = result[0].location;
 
         client.embed({
-            title: `☀️・Weather - ${current.skytext}`,
-            desc: `Weather forecast for ${current.observationpoint}`,
+            title: `☀️・Météo - ${current.skytext}`,
+            desc: `Prévisions météo pour ${current.observationpoint}`,
             thumbnail: current.imageUrl,
             fields: [
                 {
-                    name: "Timezone",
+                    name: "Fuseau horaire :",
                     value: `UTC${location.timezone}`,
                     inline: true,
                 },
                 {
-                    name: "Degree Type",
+                    name: "Type de température :",
                     value: `Celsius`,
                     inline: true,
                 },
                 {
-                    name: "Temperature",
+                    name: "Temperature :",
                     value: `${current.temperature}°`,
                     inline: true,
                 },
                 {
-                    name: "Wind",
+                    name: "Vent :",
                     value: `${current.winddisplay}`,
                     inline: true,
                 },
                 {
-                    name: "Feels like",
+                    name: "Resentit :",
                     value: `${current.feelslike}°`,
                     inline: true,
                 },
                 {
-                    name: "Humidity",
+                    name: "Humidité :",
                     value: `${current.humidity}%`,
                     inline: true,
                 }

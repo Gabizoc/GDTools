@@ -16,10 +16,10 @@ module.exports = async (client, interaction, args) => {
 
             client.embed({
                 title: `❓・Anagram`,
-                desc: `I formed a word with the given letters`,
+                desc: `Voilà ce que ça donne :`,
                 fields: [
                     {
-                        name: `💬┇Word(s)`,
+                        name: `💬┇Mot(s) :`,
                         value: content
                     }
                 ],

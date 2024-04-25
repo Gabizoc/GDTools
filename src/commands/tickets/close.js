@@ -13,7 +13,7 @@ module.exports = async (client, interaction, args) => {
 
     if (ticketData) {
         if (ticketData.resolved == true) return client.errNormal({
-            error: "Ticket is already closed!",
+            error: "Ce ticket est déjà fermé !",
             type: 'ephemeraledit'
         }, interaction);
 
@@ -23,7 +23,7 @@ module.exports = async (client, interaction, args) => {
 
             if (ticketCategory == undefined) {
                 return client.errNormal({
-                    error: "Do the setup!",
+                    error: "Initialise le systéme de ticket !",
                     type: type
                 }, interaction);
             }
@@ -39,7 +39,7 @@ module.exports = async (client, interaction, args) => {
                     });
 
                     try {
-                        var closeMessageTicket = "Here is the transcript for your ticket, please keep this if you ever want to refer to it!";
+                        var closeMessageTicket = "Voici la transcription de votre ticket, merci de la conserver si jamais vous souhaitez vous y référer !";
                         let ticketMessageData = await ticketMessageConfig.findOne({ Guild: interaction.guild.id });
                         if (ticketMessageData) {
                             closeMessageTicket = ticketMessageData.dmMessage;
@@ -49,17 +49,17 @@ module.exports = async (client, interaction, args) => {
                             desc: closeMessageTicket,
                             fields: [
                                 {
-                                    name: "👤┆Closer",
+                                    name: "👤┆Fermé par :",
                                     value: `${interaction.user}`,
                                     inline: true
                                 },
                                 {
-                                    name: "📄┆Ticket id",
+                                    name: "📄┆ID du ticket :",
                                     value: `${ticketData.TicketID}`,
                                     inline: true
                                 },
                                 {
-                                    name: "💬┆Server",
+                                    name: "💬┆Serveur :",
                                     value: `${interaction.guild.name}`,
                                     inline: true
                                 }
@@ -72,28 +72,28 @@ module.exports = async (client, interaction, args) => {
 
                 if (logsChannel) {
                     client.embed({
-                        title: `🔒・Ticket closed`,
-                        desc: `Ticket is closed`,
+                        title: `🔒・Ticket fermé`,
+                        desc: `Ce ticket est verouiller`,
                         color: client.config.colors.error,
                         fields: [
                             {
-                                name: "📘┆Ticket id",
+                                name: "📘┆ID du Ticket :",
                                 value: `${ticketData.TicketID}`,
                             },
                             {
-                                name: "👤┆Closer",
+                                name: "👤┆Fermer par :",
                                 value: `${interaction.user.tag} (${interaction.user.id})`,
                             },
                             {
-                                name: "👤┆Creator",
+                                name: "👤┆Createur :",
                                 value: `<@!${ticketData.creator}>`,
                             },
                             {
-                                name: "✋┆Claimed by",
+                                name: "✋┆Gérer par :",
                                 value: `<@!${ticketData.creator}>`,
                             },
                             {
-                                name: "⏰┆Date",
+                                name: "⏰┆Date :",
                                 value: `<t:${(Date.now() / 1000).toFixed(0)}:F>`,
                             }
                         ]
@@ -106,7 +106,7 @@ module.exports = async (client, interaction, args) => {
 
                 interaction.channel.edit({ name: `ticket-closed` });
                 client.simpleEmbed({
-                    desc: `Ticket closed by <@!${interaction.user.id}>`,
+                    desc: `Ticket fermé par <@!${interaction.user.id}>`,
                     type: type
                 }, interaction)
 
@@ -129,14 +129,14 @@ module.exports = async (client, interaction, args) => {
                     );
 
                 client.embed({
-                    title: "🔒・Closed",
-                    desc: `📝 - Save transcript \n🔓 - Reopen ticket \n⛔ - Delete ticket`,
+                    title: "🔒・Fermé",
+                    desc: `📝 - Transrire \n🔓 - Réouvrir \n⛔ - Supprimer`,
                     components: [row],
                 }, interaction.channel)
             }
             else {
                 return client.errNormal({
-                    error: "Do the ticket setup!",
+                    error: "Active le systéme de ticket d'abord!",
                     type: type
                 }, interaction);
 
@@ -144,7 +144,7 @@ module.exports = async (client, interaction, args) => {
         }
         else {
             return client.errNormal({
-                error: "Do the ticket setup!",
+                error: "Active le systéme de ticket d'abord!",
                 type: type
             }, interaction)
         }

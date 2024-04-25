@@ -17,35 +17,35 @@ module.exports = async (client, event) => {
     if (!logsChannel) return;
 
     client.embed({
-        title: `🎡・Event deleted`,
-        desc: `An event has been deleted`,
+        title: `🎡・Evènement supprimé !`,
+        desc: `Un évènement a été supprimé !`,
         fields: [
             {
-                name: `> Name`,
+                name: `> Nom :`,
                 value: `- ${event.name}`
             },
             {
-                name: `> Description`,
+                name: `> Description :`,
                 value: `- ${event.description || 'None'}`
             },
             {
-                name: `> Start`,
+                name: `> Commence :`,
                 value: `- <t:${(event.scheduledStartTimestamp / 1000).toFixed(0)}>`
             },
             {
-                name: `> Privacy`,
+                name: `> Confidentialité :`,
                 value: `- ${types[event.privacyLevel]}`
             },
             {
-                name: `> Creator`,
+                name: `> Createur :`,
                 value: `- <@!${event.creatorId}> (${event.creatorId})`
             },
             {
-                name: `> Location type`,
+                name: `> Location :`,
                 value: `- ${locations[event.entityType]}`
             },
             {
-                name: `> Timestamp`,
+                name: `> Heure :`,
                 value: `- <t:${Math.floor(Date.now() / 1000)}:R>`
             }
         ]

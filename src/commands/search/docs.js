@@ -16,7 +16,7 @@ module.exports = async (client, interaction, args) => {
             interaction.editreply({ embeds: [data] })
         } else {
             client.errNormal({ 
-                error: "Could not find that documentation!", 
+                error: "Impossible de trouvé cette documentation !", 
                 type: 'editreply' 
             }, interaction)
         }

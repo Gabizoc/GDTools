@@ -8,12 +8,12 @@ module.exports = async (client, interaction, args) => {
     thanksSchema.findOne({ User: member.id }, async (err, data) => {
         if (data) {
 
-            return client.embed({ title: `🤝・Thanks`, desc: `**${member.tag}** has \`${data.Received}\` thanks`, type: 'editreply' }, interaction);
+            return client.embed({ title: `🤝・Remerciement`, desc: `**${member.tag}** a \`${data.Received}\` remercié`, type: 'editreply' }, interaction);
 
         }
         else {
 
-            return client.embed({ title: `🤝・Thanks`, desc: `**${member.tag}** has \`0\` thanks`, type: 'editreply' }, interaction);
+            return client.embed({ title: `🤝・Remerciement`, desc: `**${member.tag}** a \`0\` remerciement`, type: 'editreply' }, interaction);
         }
     });
 

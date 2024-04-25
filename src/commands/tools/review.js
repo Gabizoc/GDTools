@@ -4,7 +4,7 @@ const Schema = require("../../database/models/reviewChannels");
 
 module.exports = async (client, interaction, args) => {
     const stars = interaction.options.getNumber('stars');
-    const message = interaction.options.getString('message') || 'Not given';
+    const message = interaction.options.getString('message') || 'Non donné';
 
     if (stars < 1 || stars > 5) return client.errNormal({
         error: `Stars must be a minimum of 1 and a maximum of 5`,

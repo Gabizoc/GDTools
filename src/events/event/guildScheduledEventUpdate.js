@@ -5,39 +5,39 @@ module.exports = async (client, oldEvent, newEvent) => {
     if (!logsChannel) return;
 
     client.embed({
-        title: `🎡・Event updated`,
+        title: `🎡・Evènement mis à jours !`,
         desc: `An event has been updated`,
         fields: [
             {
-                name: `> Old Name`,
+                name: `> Ancien Nom :`,
                 value: `- ${oldEvent.name}`
             },
             {
-                name: `> New Name`,
+                name: `> Nouveau Nom :`,
                 value: `- ${newEvent.name}`
             },
             {
-                name: `> Old Description`,
+                name: `> Ancienne Description :`,
                 value: `- ${oldEvent.description || 'None'}`
             },
             {
-                name: `> New Description`,
+                name: `> Nouvelle Description :`,
                 value: `- ${newEvent.description || 'None'}`
             },
             {
-                name: `> Old Time`,
+                name: `> Ancien Temps :`,
                 value: `- <t:${(oldEvent.scheduledStartTimestamp / 1000).toFixed(0)}>`
             },
             {
-                name: `> New Time`,
+                name: `> Nouveau Temps :`,
                 value: `- <t:${(newEvent.scheduledStartTimestamp / 1000).toFixed(0)}>`
             },
             {
-                name: `> Creator`,
+                name: `> Createur :`,
                 value: `- <@!${newEvent.creatorId}> (${newEvent.creatorId})`
             },
             {
-                name: `> Timestamp`,
+                name: `> Heures :`,
                 value: `- <t:${Math.floor(Date.now() / 1000)}:R>`
             }
         ]

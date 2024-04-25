@@ -12,13 +12,13 @@ module.exports = async (client, interaction, args) => {
 
     const channel = interaction.member.voice.channel;
     if (!channel) return client.errNormal({
-        error: `You're not in a voice channel!`,
+        error: `Tu n'es pas dans un vocal !`,
         type: 'editreply'
     }, interaction);
     var checkVoice = await client.checkVoice(interaction.guild, channel);
     if (!checkVoice) {
         return client.errNormal({
-            error: `You cannot edit this channel!`,
+            error: `Tu ne peux pas modifé ce vocal !`,
             type: 'editreply'
         }, interaction);
     } else {
@@ -26,10 +26,10 @@ module.exports = async (client, interaction, args) => {
         channel.edit({ name: name });
 
         client.succNormal({
-            text: `The channel was renamed to \`${name}\``,
+            text: `Le vocal a bien été renomé en \`${name}\``,
             fields: [
                 {
-                    name: `📘┆Channel`,
+                    name: `📘┆Channel :`,
                     value: `${channel} (${channel.name})`
                 }
             ],

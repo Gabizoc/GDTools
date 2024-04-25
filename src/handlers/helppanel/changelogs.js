@@ -15,8 +15,8 @@ module.exports = async (client) => {
                             .setPlaceholder('❌┆Rien de selectionner')
                             .addOptions([
                                 {
-                                    label: `Commands`,
-                                    description: `Mon les commandes du bot`,
+                                    label: `Commandes`,
+                                    description: `Montre les commandes du bot`,
                                     emoji: "💻",
                                     value: "commands-Bothelp",
                                 },
@@ -48,12 +48,12 @@ module.exports = async (client) => {
                     fields: [
             	        {
                             name: "📢┆Alert!",
-                            value: 'This is the changelogs of the bot, here you can see the changes that have been made to the bot.',
+                            value: 'Tu peux voir ici tous les dérnier changement !',
                             inline: false,
                         },
                         {
                             name: "📃┆Changelogs",
-                            value: '10/12/2022 - Updated the bot to the latest version of discord.js (v14)',
+                            value: 'Bot en cours de traduction ... (FR)',
                             inline: false,
                         }
                     ],

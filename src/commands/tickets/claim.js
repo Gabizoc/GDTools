@@ -25,7 +25,7 @@ module.exports = async (client, interaction, args) => {
 
                     if (ticketCategory == undefined) {
                         return client.errNormal({
-                            error: "Do the ticket setup!",
+                            error: "Active le systéme de ticket d'abord!",
                             type: type
                         }, interaction)
                     }
@@ -36,35 +36,35 @@ module.exports = async (client, interaction, args) => {
                         ticketData.save();
 
                         return client.simpleEmbed({
-                            desc: `You will now be assisted by <@!${interaction.user.id}>`,
+                            desc: `<@!${interaction.user.id}> va s'occuper de toi`,
                             type: type
                         }, interaction)
 
                     }
                     else {
                         client.errNormal({
-                            error: "This is not a ticket!",
+                            error: "Ce n'est pas un ticket !",
                             type: type
                         }, interaction)
                     }
                 }
                 else {
                     client.errNormal({
-                        error: "Ticket has already been claimed!",
+                        error: "Quelqu'un gére déjà ce ticket !",
                         type: 'ephemeral'
                     }, interaction)
                 }
             }
             else {
                 return client.errNormal({
-                    error: "Do the ticket setup!",
+                    error: "Active le systéme de ticket d'abord!",
                     type: type
                 }, interaction)
             }
         }
         else {
             return client.errNormal({
-                error: "You are not allowed to claim your own ticket!",
+                error: "Tu ne peux pas géré ton propre ticket",
                 type: 'ephemeral'
             }, interaction)
         }

@@ -54,18 +54,18 @@ module.exports = async (client, guild) => {
         const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
 
         const embed = new discord.EmbedBuilder()
-            .setTitle("🔴・Removed from a server!")
+            .setTitle("🔴・Suppression d'un serveur")
             .addFields(
-                { name: "Total servers:", value: `${totalGuilds}`, inline: true },
-                { name: "Server name", value: `${guild.name}`, inline: true },
-                { name: "Server ID", value: `${guild.id}`, inline: true },
-                { name: "Server members", value: `${guild.memberCount}`, inline: true },
-                { name: "Server owner", value: `<@!${guild.ownerId}> (${guild.ownerId})`, inline: true },
+                { name: "Serveur Total :", value: `${totalGuilds}`, inline: true },
+                { name: "Nom du serveur :", value: `${guild.name}`, inline: true },
+                { name: "Id du serveur :", value: `${guild.id}`, inline: true },
+                { name: "Nombre de membre :", value: `${guild.memberCount}`, inline: true },
+                { name: "Propriétaire du serveur :", value: `<@!${guild.ownerId}> (${guild.ownerId})`, inline: true },
             )
             .setThumbnail("https://cdn.discordapp.com/attachments/843487478881976381/852419424895631370/BotSadEmote.png")
             .setColor(client.config.colors.normal)
         kickLogs.send({
-            username: 'Bot Logs',
+            username: 'Logs :',
             avatarURL: client.user.avatarURL(),
             embeds: [embed],
         });

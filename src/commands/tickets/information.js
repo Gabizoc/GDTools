@@ -12,7 +12,7 @@ module.exports = async (client, interaction, args) => {
 
                     if (ticketCategory == undefined) {
                         return client.errNormal({
-                            error: "Do the setup!",
+                            error: "Active le systéme de ticket d'abord!",
                             type: 'editreply'
                         }, interaction);
                     }
@@ -20,37 +20,37 @@ module.exports = async (client, interaction, args) => {
                     if (interaction.channel.parentId == ticketCategory.id) {
 
                         client.embed({
-                            desc: `${client.emotes.animated.loading}・Loading information...`,
+                            desc: `${client.emotes.animated.loading}・Chargement des informations ...`,
                             type: 'editreply'
                         }, interaction).then((msg) => {
 
                             client.transcript(interaction, interaction.channel);
 
                             return client.embed({
-                                title: `ℹ・Information`,
+                                title: `ℹ・Informations :`,
                                 fields: [
                                     {
-                                        name: "Ticket name",
+                                        name: "Nom du ticket :",
                                         value: `\`${interaction.channel.name}\``,
                                         inline: true,
                                     },
                                     {
-                                        name: "Channel id",
+                                        name: "ID du channel",
                                         value: `\`${interaction.channel.id}\``,
                                         inline: true,
                                     },
                                     {
-                                        name: "Creator",
+                                        name: "Createur :",
                                         value: `<@!${ticketData.creator}>`,
                                         inline: true,
                                     },
                                     {
-                                        name: "Claimed by",
+                                        name: "Géré par :",
                                         value: `<@!${ticketData.claimed}>`,
                                         inline: true,
                                     },
                                     {
-                                        name: "Ticket id",
+                                        name: "ID du ticket :",
                                         value: `${ticketData.TicketID}`,
                                         inline: true,
                                     },
@@ -62,14 +62,14 @@ module.exports = async (client, interaction, args) => {
                     }
                     else {
                         client.errNormal({ 
-                            error: "This is not a ticket!", 
+                            error: "Ce n'est pas un ticket !", 
                             type: 'editreply'
                         }, interaction);
                     }
                 }
                 else {
                     return client.errNormal({ 
-                        error: "Do the setup!", 
+                        error: "Active le systéme de ticket d'abord!", 
                         type: 'editreply'
                     }, interaction);
                 }

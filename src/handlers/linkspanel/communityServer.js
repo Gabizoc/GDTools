@@ -12,29 +12,29 @@ module.exports = async (client) => {
                     .addComponents(
                         new Discord.StringSelectMenuBuilder()
                             .setCustomId('Bot-linkspanel')
-                            .setPlaceholder('❌┆Nothing selected')
+                            .setPlaceholder('❌┆Rien de séléctioné')
                             .addOptions([
                                 {
-                                    label: `Support server`,
-                                    description: `Join the suppport server`,
+                                    label: `Serveur de support`,
+                                    description: `Rejoint le serveur support`,
                                     emoji: "❓",
                                     value: "support-linkspanel",
                                 },
                                 {
-                                    label: `Invite Bot`,
-                                    description: `Invite Bot to your server`,
+                                    label: `Invite le Bot`,
+                                    description: `Invite le bot à ton serveur !`,
                                     emoji: "📨",
                                     value: "invite-linkspanel",
                                 },
                                 {
-                                    label: `Community Server`,
-                                    description: `Join the community server!`,
+                                    label: `Serveur communautaire`,
+                                    description: `Rejoint le serveur communautaire`,
                                     emoji: "🌍",
                                     value: "community-linkspanel",
                                 },
                                 {
                                     label: `Top.gg`,
-                                    description: `Show the top.gg link`,
+                                    description: `Vote pour moi !`,
                                     emoji: "📃",
                                     value: "top.gg-linkspanel",
                                 },
@@ -45,14 +45,14 @@ module.exports = async (client) => {
                     .addComponents(
 
                         new Discord.ButtonBuilder()
-                            .setLabel("Community Server")
+                            .setLabel("Serveur Communautaire")
                             .setURL("https://discord.gg/jf6ZkpgsXF")
                             .setStyle(Discord.ButtonStyle.Link),
                     );
 
                 client.embed({
-                    title: `🌍・Community Server`,
-                    desc: `Talk and play games in the comunity server!`,
+                    title: `🌍・Serveur Communautaire`,
+                    desc: `Rejoit nous là bas !`,
                     image: "https://cdn.discordapp.com/attachments/843487478881976381/874694194474668052/Bot_banner_invite.jpg",
                     url: client.config.discord.botInvite,
                     components: [row2, row],

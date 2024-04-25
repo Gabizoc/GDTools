@@ -86,20 +86,6 @@ module.exports = {
         )
         .addSubcommand(subcommand =>
             subcommand
-                .setName('sourcebin')
-                .setDescription('Upload code to source bin')
-                .addStringOption(option => option.setName('language').setDescription('The language of your code').setRequired(true))
-                .addStringOption(option => option.setName('code').setDescription('Your code').setRequired(true))
-        )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('url')
-                .setDescription('Make a shortend url')
-                .addStringOption(option => option.setName('site').setDescription('The link to the website').setRequired(true))
-                .addStringOption(option => option.setName('code').setDescription('The code for the url').setRequired(true))
-        )
-        .addSubcommand(subcommand =>
-            subcommand
                 .setName('review')
                 .setDescription('Write a review')
                 .addNumberOption(option => option.setName('stars').setDescription('The number of stars (max 5)').setRequired(true))

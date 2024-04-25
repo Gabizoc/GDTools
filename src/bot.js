@@ -72,9 +72,9 @@ if (clientID && clientSecret) {
                 secure: Boolean(process.env.LAVALINK_SECURE) || false
             },
             {
-                host: "lavalink.techpoint.world",
+                host: "lavalink.oryzen.xyz",
                 port: 80,
-                password: "techpoint"
+                password: "oryzen.xyz"
             },
         ],
         send(id, payload) {

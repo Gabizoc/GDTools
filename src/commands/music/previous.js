@@ -5,7 +5,7 @@ module.exports = async (client, interaction, args) => {
 
     const channel = interaction.member.voice.channel;
     if (!channel) return client.errNormal({
-        error: `You're not in a voice channel!`,
+        error: `Tu n'es pas dans un vocal`,
         type: 'editreply'
     }, interaction);
 
@@ -15,7 +15,7 @@ module.exports = async (client, interaction, args) => {
     }, interaction);
 
     if (!player || !player.queue.previous) return client.errNormal({
-        error: "There are no songs was played previously",
+        error: "Aucune chanson n'a été jouée précédemment",
         type: 'editreply'
     }, interaction);
 
@@ -47,21 +47,21 @@ module.exports = async (client, interaction, args) => {
     client.embed({
         title: `${client.emotes.normal.music}・${track.title}`,
         url: track.uri,
-        desc: `Music started in <#${player.voiceChannel}>!`,
+        desc: `Musique lancé dans <#${player.voiceChannel}>!`,
         thumbnail: track.thumbnail,
         fields: [
             {
-                name: `👤┆Requested By`,
+                name: `👤┆Demandé par :`,
                 value: `${track.requester}`,
                 inline: true
             },
             {
-                name: `${client.emotes.normal.clock}┆Ends at`,
+                name: `${client.emotes.normal.clock}┆Fini dans :`,
                 value: `<t:${((Date.now() / 1000) + (track.duration / 1000)).toFixed(0)}:f>`,
                 inline: true
             },
             {
-                name: `🎬┆Author`,
+                name: `🎬┆Auteur :`,
                 value: `${track.author}`,
                 inline: true
             }

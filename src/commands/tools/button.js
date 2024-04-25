@@ -17,7 +17,7 @@ module.exports = async (client, interaction, args) => {
 
     client.embed({
         title: `🔗・${text}`,
-        desc: `Click the button to open the link!`,
+        desc: `Click sur le bouton pour ouvrir le lien !`,
         components: [row],
         type: 'editreply'
     }, interaction)

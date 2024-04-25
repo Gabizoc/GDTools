@@ -25,13 +25,13 @@ module.exports = async (client, interaction, args) => {
             }, channel)
 
             client.succNormal({
-                text: `Ticket panel has been set up successfully!`,
+                text: `Le panel de ticket a bien été générer !`,
                 type: 'editreply'
             }, interaction);
         }
         else {
             client.errNormal({
-                error: `Run the ticket setup first!`,
+                error: `Exécutez d’abord la configuration des tickets !`,
                 type: 'editreply'
             }, interaction);
         }

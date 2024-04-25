@@ -6,11 +6,11 @@ module.exports = async (client, interaction, args) => {
     let link = `https://duckduckgo.com/?q=${name}`;
 
     client.succNormal({
-        text: `I have found the following for: \`${name}\``,
+        text: `J'ai trouvé ça : \`${name}\``,
         fields: [
             {
-                name: `🔗┇Link`,
-                value: `[Click here to see the link](${link})`,
+                name: `🔗┇Lien :`,
+                value: `[Click ici](${link})`,
                 inline: true,
             }
         ], type: 'editreply'

@@ -6,20 +6,20 @@ const thanksAuthor = require("../../database/models/thanksAuthor");
 module.exports = async (client, interaction, args) => {
 
     const target = interaction.options.getUser('user');
-    if (!target) return client.errUsage({ usage: "thanks [mention user]", type: 'editreply' }, interaction);
+    if (!target) return client.errUsage({ usage: "Vous avez remercié [mention user]", type: 'editreply' }, interaction);
 
-    if (target.id === interaction.user.id) return client.errNormal({ error: `You cannot thank yourself!`, type: 'editreply' }, interaction);
+    if (target.id === interaction.user.id) return client.errNormal({ error: `Tu ne peux pas de remercié !`, type: 'editreply' }, interaction);
 
     thanksAuthor.findOne({ User: target.id, Author: interaction.user.id }, async (err, data) => {
         if (data) {
-            client.errNormal({ error: `You already thanked this user!`, type: 'editreply' }, interaction);
+            client.errNormal({ error: `Tu as déjà remercié cette perssone !`, type: 'editreply' }, interaction);
         }
         else {
             thanksSchema.findOne({ User: target.id }, async (err, data) => {
                 if (data) {
                     data.Received += 1;
                     data.save();
-                    client.succNormal({ text: `You have thanked <@${target.id}>! They now have \`${data.Received}\` thanks`, type: 'editreply' }, interaction);
+                    client.succNormal({ text: `Tu as remercié <@${target.id}>! Elle/Il a maintenant \`${data.Received}\` remerciement`, type: 'editreply' }, interaction);
                 }
                 else {
                     new thanksSchema({
@@ -27,7 +27,7 @@ module.exports = async (client, interaction, args) => {
                         UserTag: target.tag,
                         Received: 1,
                     }).save();
-                    client.succNormal({ text: `You have thanked <@${target.id}>! They now have \`1\` thanks`, type: 'editreply' }, interaction);
+                    client.succNormal({ text: `Tu as remercié <@${target.id}>! Elle/Il a maintenant \`1\` remerciement`, type: 'editreply' }, interaction);
                 }
             })
 

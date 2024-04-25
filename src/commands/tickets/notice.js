@@ -23,21 +23,21 @@ module.exports = async (client, interaction, args) => {
 
                         if (ticketCategory == undefined) {
                             return client.errNormal({
-                                error: "Do the setup!",
+                                error: "Active le systéme de ticket d'abord!",
                                 type: type
                             }, interaction);
                         }
 
                         if (interaction.channel.parentId == ticketCategory.id) {
                             client.simpleEmbed({
-                                desc: `Hey <@!${ticketData.creator}>, \n\nCan we still help you? \nIf there is no response within **24 hours**, we will close this ticket \n\n- Team ${interaction.guild.name}`,
+                                desc: `Hey <@!${ticketData.creator}>, \n\nPouvons-nous encore vous aider ? \nS'il n'y a pas de réponse dans les **24 heures**, nous clôturerons ce ticket\n\n- Team ${interaction.guild.name}`,
                                 content: `<@!${ticketData.creator}>`,
                                 type: type
                             }, interaction)
                         }
                         else {
                             client.errNormal({
-                                error: "This is not a ticket!",
+                                error: "Ce n'est pas un ticket !",
                                 type: type
                             }, interaction);
 
@@ -45,7 +45,7 @@ module.exports = async (client, interaction, args) => {
                     }
                     else {
                         return client.errNormal({
-                            error: "Do the setup!",
+                            error: "Active le systéme de ticket d'abord!",
                             type: type
                         }, interaction);
                     }
@@ -53,7 +53,7 @@ module.exports = async (client, interaction, args) => {
             }
             else {
                 return client.errNormal({
-                    error: "You are not allowed to notice your own ticket!",
+                    error: "Tu ne peux pas relancer ton ticket !",
                     type: 'ephemeral'
                 }, interaction)
             }

@@ -7,7 +7,7 @@ module.exports = async (client, interaction, args) => {
 
     const r = await pop.npm(name).catch(e => {
         return client.errNormal({ 
-            error: "Package not found!",
+            error: "Package non trouvé",
             type: 'editreply'
         }, interaction)
     });
@@ -16,37 +16,37 @@ module.exports = async (client, interaction, args) => {
         title: `📁・${r.name}`,
         fields: [
             {
-                name: "💬┇Name",
+                name: "💬┇Nom :",
                 value: `${r.name}`,
                 inline: true,
             },
             {
-                name: "🏷️┇Version",
+                name: "🏷️┇Version :",
                 value: `${r.version}`,
                 inline: true,
             },
             {
-                name: "📃┇Description",
+                name: "📃┇Description :",
                 value: `${r.description}`,
                 inline: true,
             },
             {
-                name: "⌨️┇Keywords",
+                name: "⌨️┇Mot clé :",
                 value: `${r.keywords}`,
                 inline: true,
             },
             {
-                name: "💻┇Author",
+                name: "💻┇Autheur ;:",
                 value: `${r.author}`,
                 inline: true,
             },
             {
-                name: "📁┇Downloads",
+                name: "📁┇Téléchargement :",
                 value: `${r.downloads_this_year}`,
                 inline: true,
             },
             {
-                name: "⏰┇Last publish",
+                name: "⏰┇Dérniére publication :",
                 value: `<t:${Math.round(new Date(r.last_published).getTime() / 1000)}>`,
                 inline: true,
             },

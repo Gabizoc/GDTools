@@ -12,23 +12,23 @@ module.exports = async (client, interaction, args) => {
 
     const channel = interaction.member.voice.channel;
     if (!channel) return client.errNormal({
-        error: `You're not in a voice channel!`,
+        error: `Tu n'es pas dans un vocal !`,
         type: 'editreply'
     }, interaction);
     var checkVoice = await client.checkVoice(interaction.guild, channel);
     if (!checkVoice) {
         return client.errNormal({
-            error: `You cannot edit this channel!`,
+            error: `Tu ne peux pas modifé ce vocal !`,
             type: 'editreply'
         }, interaction);
     } else {
         channel.setUserLimit(limit);
 
         client.succNormal({
-            text: `The channel limit was to \`${limit}\`!`,
+            text: `La limite est maintenant de \`${limit}\`!`,
             fields: [
                 {
-                    name: `📘┆Channel`,
+                    name: `📘┆Channel :`,
                     value: `${channel} (${channel.name})`
                 }
             ],

@@ -33,7 +33,7 @@ module.exports = async (client, member) => {
                     var channel = client.channels.cache.get(channelData.Channel)
 
                     client.embed({
-                        title: `🚀・New boost`,
+                        title: `🚀・Nouveau Boost`,
                         desc: boostMessage
                     }, channel)
                 }
@@ -47,8 +47,8 @@ module.exports = async (client, member) => {
                     var channel = client.channels.cache.get(channelData.Channel)
 
                     client.embed({
-                        title: `🚀・New boost`,
-                        desc: `${member} boosted the server!`
+                        title: `🚀・Nouveau Boost`,
+                        desc: `${member} a bousté le serveur !`
                     }, channel)
                 }
                 catch { }

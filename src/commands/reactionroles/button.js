@@ -11,7 +11,7 @@ module.exports = async (client, interaction, args) => {
 
     Schema.findOne({ Guild: interaction.guild.id, Category: category }, async (err, data) => {
         if (!data) return client.errNormal({ 
-            error: `No data found!`,
+            error: `Pas de donné trouvé !`,
             type: 'editreply'
         }, interaction);
 
@@ -26,8 +26,8 @@ module.exports = async (client, interaction, args) => {
         var sendComponents = await client.buttonReactions("id", reactions)
 
         client.embed({
-            title: `${upper}・Roles`,
-            desc: `_____ \n\nChoose your roles by pressing the button! \n\n${mapped}`,
+            title: `${upper}・Rôles`,
+            desc: `_____ \n\nChoisi tes rôles en appuyant sur le(s) bouton(s) \n\n${mapped}`,
             components: sendComponents
         }, channel).then((msg) => {
             data.Message = msg.id;
@@ -35,7 +35,7 @@ module.exports = async (client, interaction, args) => {
         })
 
         client.succNormal({ 
-            text: "Reaction panel successfully created!",
+            text: "Panel bien généré !",
             type: 'ephemeraledit'
         }, interaction);
     })

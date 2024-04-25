@@ -18,7 +18,7 @@ module.exports = async (client, interaction, args) => {
 
     var channelName = await client.getTemplate(interaction.guild);
     channelName = channelName.replace(`{emoji}`, "🤡")
-    channelName = channelName.replace(`{name}`, `Animated Emojis: ${Animated || '0'}`)
+    channelName = channelName.replace(`{name}`, `Emojis animé : ${Animated || '0'}`)
 
     await interaction.guild.channels.create({
         name: channelName,
@@ -43,10 +43,10 @@ module.exports = async (client, interaction, args) => {
         })
 
         client.succNormal({
-            text: `Animated emoji's count created!`,
+            text: `Compteur d'émoji animé créé !`,
             fields: [
                 {
-                    name: `📘┆Channel`,
+                    name: `📘┆Channel :`,
                     value: `${channel}`
                 }
             ],

@@ -5,24 +5,24 @@ module.exports = async (client, interaction, args) => {
     
     const channel = interaction.member.voice.channel;
     if (!channel) return client.errNormal({
-        error: `You're not in a voice channel!`,
+        error: `Tu n'es pas dans un vocal`,
         type: 'editreply'
     }, interaction);
 
     if (player && (channel.id !== player?.voiceChannel)) return client.errNormal({
-        error: `You're not in the same voice channel!`,
+        error: `Vous n'étes pas dans le même channel`,
         type: 'editreply'
     }, interaction);
 
     if (!player || !player.queue.current) return client.errNormal({
-        error: "There are no songs playing in this server",
+        error: "<:cross:1220075609493868544> Pas de musique à jouer",
         type: 'editreply'
     }, interaction);
 
     let number = interaction.options.getNumber('number');
 
     if (number > player.queue.size) return client.errNormal({
-        error: `The queue doesn't have that much songs`,
+        error: `La file d'attente n'a plus beaucoup de chansons`,
         type: 'editreply'
     }, interaction);
 
@@ -30,7 +30,7 @@ module.exports = async (client, interaction, args) => {
     player.queue.remove((parseInt(number)) - 1)
 
     client.succNormal({ 
-        text: `Removed **${targetSong.title}** from the queue`,
+        text: `Suppression de **${targetSong.title}** de la liste d'attente !`,
         type: 'editreply'
     }, interaction);
 }
