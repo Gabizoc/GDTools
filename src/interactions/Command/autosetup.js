@@ -5,7 +5,7 @@ const Discord = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('autosetup')
-        .setDescription('Config tout automatiquement')
+        .setDescription('Configure les modules automatiquement')
         .addSubcommand(subcommand =>
             subcommand
                 .setName('help')
@@ -14,15 +14,15 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('logs')
-                .setDescription('configure le systéme de logs')
+                .setDescription('Configure le systéme de logs')
                 .addStringOption(option =>
                     option.setName('setup')
                         .setDescription('Le systéme de votre choix')
                         .setRequired(true)
                         .addChoices(
-                            { name: 'Server logs', value: 'serverLogs' },
-                            { name: 'Level logs', value: 'levelLogs' },
-                            { name: 'Boost logs', value: 'boostLogs' }
+                            { name: 'Logs de serveur', value: 'serverLogs' },
+                            { name: 'Logs de niveau', value: 'levelLogs' },
+                            { name: 'Logs de boost', value: 'boostLogs' }
                         )
                 )
         )

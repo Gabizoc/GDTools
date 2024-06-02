@@ -9,7 +9,7 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('help')
-                .setDescription('Get information about the voice category commands')
+                .setDescription('Liste les commandes de  voice category commands')
         )
         .addSubcommand(subcommand =>
             subcommand

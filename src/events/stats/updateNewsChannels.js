@@ -7,7 +7,7 @@ module.exports = async (client, channel, guild) => {
         try {
             var channelName = await client.getTemplate(guild);
             channelName = channelName.replace(`{emoji}`, "📢")
-            channelName = channelName.replace(`{name}`, `News Channels: ${guild.channels.cache.filter(channel => channel.type ===  Discord.ChannelType.GuildAnnouncement).size || 0}`)
+            channelName = channelName.replace(`{name}`, `Annonce : ${guild.channels.cache.filter(channel => channel.type ===  Discord.ChannelType.GuildAnnouncement).size || 0}`)
 
             const data = await Schema.findOne({ Guild: guild.id });
             const changeChannel = guild.channels.cache.get(data.NewsChannels)

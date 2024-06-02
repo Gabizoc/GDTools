@@ -9,7 +9,7 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('help')
-                .setDescription('Get information about the economy category commands')
+                .setDescription('Liste les commandes de  economy category commands')
         )
         .addSubcommand(subcommand =>
             subcommand

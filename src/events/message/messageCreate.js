@@ -29,18 +29,18 @@ module.exports = async (client, message) => {
 
   if (message.channel.type === Discord.ChannelType.DM) {
     let embedLogs = new Discord.EmbedBuilder()
-      .setTitle(`💬・New DM message!`)
-      .setDescription(`Bot has received a new DM message!`)
+      .setTitle(`💬・Nouveau MP`)
+      .setDescription(`Le bot a reçus un mp`)
       .addFields(
-        { name: "👤┆Send By", value: `${message.author} (${message.author.tag})`, inline: true },
-        { name: `💬┆Message`, value: `${message.content || "None"}`, inline: true },
+        { name: "👤┆Envoyé par :", value: `${message.author} (${message.author.tag})`, inline: true },
+        { name: `💬┆Message :`, value: `${message.content || "Auccun"}`, inline: true },
       )
       .setColor(client.config.colors.normal)
       .setTimestamp();
 
     if (message.attachments.size > 0)
       embedLogs.addFields(
-        { name: `📃┆Attachments`, value: `${message.attachments.first()?.url}`, inline: false },
+        { name: `📃┆Média :`, value: `${message.attachments.first()?.url}`, inline: false },
       )
     return dmlog.send({
       username: "Bot DM",
@@ -112,17 +112,17 @@ module.exports = async (client, message) => {
                 await client.channels.cache
                   .get(levelData.Channel)
                   .send({
-                    content: `**GG** <@!${message.author.id}>, you are now level **${user.level}**`,
+                    content: `**GG** <@!${message.author.id}>, tu es maintenant **${user.level}**`,
                   })
                   .catch(() => { });
               } else {
                 message.channel.send({
-                  content: `**GG** <@!${message.author.id}>, you are now level **${user.level}**`,
+                  content: `**GG** <@!${message.author.id}>, tu es maintenant **${user.level}**`,
                 });
               }
             } catch {
               message.channel.send({
-                content: `**GG** <@!${message.author.id}>, you are now level **${user.level}**`,
+                content: `**GG** <@!${message.author.id}>, tu es maintenant **${user.level}**`,
               });
             }
           }
@@ -186,7 +186,7 @@ module.exports = async (client, message) => {
         client
           .simpleEmbed(
             {
-              desc: `${message.author} is no longer afk!`,
+              desc: `${message.author} n'est plus afk`,
             },
             message.channel
           )
@@ -214,7 +214,7 @@ module.exports = async (client, message) => {
         async (err, data) => {
           if (data) {
             client.simpleEmbed(
-              { desc: `${u} is currently afk! **Reason:** ${data.Message}` },
+              { desc: `${u} est maintenant AFK **Réson :** ${data.Message}` },
               message.channel
             );
           }
@@ -369,25 +369,25 @@ module.exports = async (client, message) => {
     client
       .embed(
         {
-          title: "Hi, i'm Bot",
-          desc: `Use with commands via Discord ${client.emotes.normal.slash} commands`,
+          title: "Hey !",
+          desc: `Tu peux m'utilisé avec les ${client.emotes.normal.slash} commandes !`,
           fields: [
             {
-              name: "📨┆Invite me",
-              value: `Invite Bot in your own server! [Click here](${client.config.discord.botInvite})`,
+              name: "📨┆Invite moi !",
+              value: `Invite moi dans ton serveur ! [Clique ici](${client.config.discord.botInvite})`,
             },
             {
-              name: "❓┇I don't see any slash commands",
+              name: "❓┇Je ne vois aucune commande slash ?",
               value:
-                "The bot may not have permissions for this. Open the invite link again and select your server. The bot then gets the correct permissions",
+                "Le bot n'a peut-être pas les autorisations nécessaires pour cela. Ouvrez à nouveau le lien d'invitation et sélectionnez votre serveur. Le bot obtient alors les autorisations appropriées",
             },
             {
-              name: "❓┆Need support?",
-              value: `For questions you can join our [support server](${client.config.discord.serverInvite})!`,
+              name: "❓┆Besoin d'aide ?",
+              value: `Pour toute question rejoignez le [support](${client.config.discord.serverInvite})!`,
             },
             {
-              name: "🐞┆Found a bug?",
-              value: `Report all bugs via: \`/report bug\`!`,
+              name: "🐞┆Bug trouvé ?",
+              value: `Report tous les bug avec \`/report bug\`!`,
             },
           ],
           components: [row],
@@ -423,7 +423,7 @@ module.exports = async (client, message) => {
       return message.author.send({ content: cmdx.Responce }).catch((e) => {
         client.errNormal(
           {
-            error: "I can't DM you, maybe you have DM turned off!",
+            error: "Je ne peux pas vous envoyer de MP, peut-être que vous les avez désactivé ?",
           },
           message.channel
         );

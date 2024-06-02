@@ -5,23 +5,23 @@ module.exports = async (client, user, mod) => {
     if (!logsChannel) return;
 
     client.embed({
-        title: `🔨・Membre Désavertie`,
-        desc: `Le membre a été désavertie`,
+        title: `🔨・Membre désavertie`,
+        desc: `Le membre a été désavertie !`,
         fields: [
             {
-                name: `> Membre`,
+                name: `> Membre :`,
                 value: `- ${user}`
             },
             {
-                name: `> Tag`,
+                name: `> Tag :`,
                 value: `- ${user.user.username}#${user.user.discriminator}`
             },
             {
-                name: `> ID`,
+                name: `> ID :`,
                 value: `${user.id}`
             },
             {
-                name: `> Moderateur`,
+                name: `> Moderateur :`,
                 value: `${mod} (${mod.id})`
             }
         ]

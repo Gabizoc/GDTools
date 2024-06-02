@@ -6,11 +6,11 @@ const Discord = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('config')
-        .setDescription('Adjust the bot to your taste')
+        .setDescription('Ajuste le bot comme tu le shouaites')
         .addSubcommand(subcommand =>
             subcommand
                 .setName('help')
-                .setDescription('Get information about the config category commands')
+                .setDescription('Liste les commandes de  config category commands')
         )
         .addSubcommand(subcommand =>
             subcommand

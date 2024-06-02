@@ -10,7 +10,7 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('help')
-                .setDescription('Get information about the moderation category commands')
+                .setDescription('Liste les commandes de  moderation category commands')
         )
         .addSubcommand(subcommand =>
             subcommand

@@ -11,7 +11,7 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('help')
-                .setDescription('Get information about the family category commands')
+                .setDescription('Liste les commandes de  family category commands')
         )
         .addSubcommand(subcommand =>
             subcommand

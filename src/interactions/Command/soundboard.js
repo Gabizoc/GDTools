@@ -12,7 +12,7 @@ module.exports = {
         .addSubcommand((subcommand) =>
             subcommand
                 .setName('help')
-                .setDescription('Get information about the soundboard category commands')
+                .setDescription('Liste les commandes de  soundboard category commands')
         )
         
         // Windows Sounds

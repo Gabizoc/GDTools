@@ -11,31 +11,31 @@ module.exports = async (client, oldChannel, newChannel) => {
     if (!logsChannel) return;
 
     client.embed({
-        title: `📖・Thread updated`,
-        desc: `A thread has been updated`,
+        title: `📖・Fil modfié`,
+        desc: `Un fil a été modifié !`,
         fields: [
             {
-                name: `> Old name`,
+                name: `> Ancien nom :`,
                 value: `- ${oldChannel.name}`
             },
             {
-                name: `> New name`,
+                name: `> Nouveau nom :`,
                 value: `- ${newChannel.name}`
             },
             {
-                name: `> ID`,
+                name: `> ID :`,
                 value: `- ${newChannel.id}`
             },
             {
-                name: `> Category`,
+                name: `> Categorie :`,
                 value: `${newChannel.parent}`
             },
             {
-                name: `> Channel`,
+                name: `> Channel :`,
                 value: `<#${newChannel.id}>`
             },
             {
-                name: `> Type`,
+                name: `> Type :`,
                 value: `${types[newChannel.type]}`
             }
         ]

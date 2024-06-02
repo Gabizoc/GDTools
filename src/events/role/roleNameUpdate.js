@@ -5,27 +5,27 @@ module.exports = async (client, role, oldName, newName) => {
     if (!logsChannel) return;
 
     client.embed({
-        title: `🧻・Role name updated`,
-        desc: `A role has been updated`,
+        title: `🧻・Nom modifié`,
+        desc: `Le nom d'un rôle a été modifié !`,
         fields: [
             {
-                name: `> Role`,
+                name: `> Rôle :`,
                 value: `- ${role}`
             },
             {
-                name: `> Before`,
+                name: `> Avant :`,
                 value: `- ${oldName}`
             },
             {
-                name: `> After`,
+                name: `> Arès :`,
                 value: `- ${newName}`
             },
             {
-                name: `> ID`,
+                name: `> ID :`,
                 value: `${role.id}`
             },
             {
-                name: `> Timestamp`,
+                name: `> Heure :`,
                 value: `- <t:${Math.floor(Date.now() / 1000)}:R>`
             }
         ]

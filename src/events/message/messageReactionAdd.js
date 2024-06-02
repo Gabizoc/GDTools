@@ -41,17 +41,17 @@ module.exports = async (client, reaction, user) => {
         image: image,
         fields: [
           {
-            name: `⭐┇Stars`,
+            name: `⭐┇Stars :`,
             value: `${reaction.count}`,
             inline: true
           },
           {
-            name: `🗨️┇Message`,
-            value: `[Jump to the message](${reaction.message.url})`,
+            name: `🗨️┇Message :`,
+            value: `[Alle au message](${reaction.message.url})`,
             inline: true
           },
           {
-            name: `👤┇Author`,
+            name: `👤┇Autheur :`,
             value: `${reaction.message.author} (${reaction.message.author.tag})`,
             inline: true
           }
@@ -63,7 +63,7 @@ module.exports = async (client, reaction, user) => {
     if (!stars) {
       const image = reaction.message.attachments.size > 0 ? await extension(reaction, reaction.message.attachments.first()?.url) : "";
       if (image === "" && reaction.message.cleanContent.length < 1) return client.errNormal({
-        error: `You cannot star an empty message`,
+        error: `Vous ne pouvez pas suivre un message vide`,
         type: 'ephemeral'
       }, reaction.message);
 
@@ -73,17 +73,17 @@ module.exports = async (client, reaction, user) => {
         image: image,
         fields: [
           {
-            name: `⭐┇Stars`,
+            name: `⭐┇Stars :`,
             value: `${reaction.count}`,
             inline: true
           },
           {
-            name: `🗨️┇Message`,
+            name: `🗨️┇Message :`,
             value: `[Jump to the message](${reaction.message.url})`,
             inline: true
           },
           {
-            name: `👤┇Author`,
+            name: `👤┇Autheur :`,
             value: `${reaction.message.author} (${reaction.message.author.tag})`,
             inline: true
           }

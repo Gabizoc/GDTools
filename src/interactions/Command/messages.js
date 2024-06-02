@@ -9,7 +9,7 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('help')
-                .setDescription('Get information about the message category commands')
+                .setDescription('Liste les commandes de  message category commands')
         )
         .addSubcommand(subcommand =>
             subcommand

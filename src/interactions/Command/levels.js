@@ -10,7 +10,7 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('help')
-                .setDescription('Get information about the levels category commands')
+                .setDescription('Liste les commandes de  levels category commands')
         )
         .addSubcommand(subcommand =>
             subcommand

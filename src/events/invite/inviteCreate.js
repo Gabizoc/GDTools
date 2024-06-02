@@ -5,19 +5,19 @@ module.exports = async (client, invite) => {
     if (!logsChannel) return;
 
     client.embed({
-        title: `📨・Invite created`,
-        desc: `A invite has been created`,
+        title: `📨・Invitation créé`,
+        desc: `Une invitation a été créé !`,
         fields: [
             {
-                name: `> Code`,
+                name: `> Code :`,
                 value: `- ${invite.code}`
             },
             {
-                name: `> Inviter`,
+                name: `> Inviteur :`,
                 value: `- ${invite.inviter} (${invite.inviter.tag})`
             },
             {
-                name: `> Timestamp`,
+                name: `> Heure :`,
                 value: `- <t:${Math.floor(invite.createdTimestamp / 1000)}:R>`
             }
         ]

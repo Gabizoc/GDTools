@@ -6,37 +6,37 @@ const Discord = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('automod')
-        .setDescription('Gére l auto-modération')
+        .setDescription(`Gére l'auto-modération`)
         .addSubcommand(subcommand =>
             subcommand
                 .setName('help')
-                .setDescription('Donne des information sur la commande')
+                .setDescription('Donne des information sur les commandes de modération automatique')
         )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('antiinvite')
-                .setDescription('Activé / Désactivé l anti-invite')
+                .setDescription(`Activé / Désactivé l'anti-invite`)
                 .addBooleanOption(option => option.setName('active').setDescription('Séléctione un état').setRequired(true))
         )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('antilinks')
-                .setDescription('Activé / Désactivé l anti-lien')
+                .setDescription(`Activé / Désactivé l'anti-lien`)
                 .addBooleanOption(option => option.setName('active').setDescription('Séléctione un état').setRequired(true))
         )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('antispam')
-                .setDescription('Activé / Désactivé l anti-spam')
+                .setDescription(`Activé / Désactivé l'anti-spam`)
                 .addBooleanOption(option => option.setName('active').setDescription('Séléctione un état').setRequired(true))
         )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('linkschannel')
-                .setDescription('Ajout un channel où l on peut envoyer des liens')
+                .setDescription(`Ajout d'un channel où l'on peut envoyer des liens`)
                 .addStringOption(option =>
                     option.setName('type')
-                        .setDescription('Que veux-tu fait avec le channel ?')
+                        .setDescription('Que veux-tu faire avec le channel ?')
                         .setRequired(true)
                         .addChoices(
                             { name: 'Ajouter', value: 'add' },

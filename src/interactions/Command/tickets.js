@@ -12,7 +12,7 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('help')
-                .setDescription('Get information about the tickets category commands')
+                .setDescription('Liste les commandes de  tickets category commands')
         )
         .addSubcommand(subcommand =>
             subcommand

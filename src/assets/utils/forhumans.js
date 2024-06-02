@@ -1,11 +1,11 @@
 function forHumans(o) {
   for (
     var r = [
-      [Math.floor(o / 31536e3), "years"],
-      [Math.floor((o % 31536e3) / 86400), "days"],
-      [Math.floor(((o % 31536e3) % 86400) / 3600), "hours"],
+      [Math.floor(o / 31536e3), "annés"],
+      [Math.floor((o % 31536e3) / 86400), "jours"],
+      [Math.floor(((o % 31536e3) % 86400) / 3600), "heures"],
       [Math.floor((((o % 31536e3) % 86400) % 3600) / 60), "minutes"],
-      [(((o % 31536e3) % 86400) % 3600) % 60, "seconds"],
+      [(((o % 31536e3) % 86400) % 3600) % 60, "secondes"],
     ],
     e = "",
     t = 0,

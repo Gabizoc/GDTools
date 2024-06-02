@@ -10,7 +10,7 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('help')
-                .setDescription('Get information about the profile category commands')
+                .setDescription('Liste les commandes de  profile category commands')
         )
         .addSubcommand(subcommand =>
             subcommand

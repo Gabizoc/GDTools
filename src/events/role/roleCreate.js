@@ -5,31 +5,31 @@ module.exports = async (client, role) => {
     if (!logsChannel) return;
 
     client.embed({
-        title: `🧻・Role created`,
-        desc: `A role has been created`,
+        title: `🧻・Rôle créé`,
+        desc: `Un rôle a été créé !`,
         fields: [
             {
-                name: `> Role`,
+                name: `> Rôle :`,
                 value: `- ${role}`
             },
             {
-                name: `> Name`,
+                name: `> Nom :`,
                 value: `- ${role.name}`
             },
             {
-                name: `> ID`,
+                name: `> ID :`,
                 value: `- ${role.id}`
             },
             {
-                name: `> Color`,
+                name: `> Couleur :`,
                 value: `${role.hexColor}`
             },
             {
-                name: `> Position`,
+                name: `> Position :`,
                 value: `${role.position}`
             },
             {
-                name: `> Timestamp`,
+                name: `> Heure :`,
                 value: `- <t:${Math.floor(Date.now() / 1000)}:R>`
             }
         ]

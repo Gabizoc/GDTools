@@ -16,22 +16,22 @@ module.exports = async (client, oldMember, newMember) => {
     if (!logsChannel) return;
 
     var ostring = "";
-    if (removedRoles.size === 0) ostring = "No roles removed";
+    if (removedRoles.size === 0) ostring = "Auccune modification !";
     if (removedRoles.size > 0) removedRoles.forEach(element => { ostring += "<@&" + element + "> " });
 
     var nstring = "";
     if (addedRoles.size > 0) addedRoles.forEach(element => { nstring += "<@&" + element + "> " });
 
     client.embed({
-        title: `${newMember.user.username} roles adjusted`,
-        desc: `There are roles changed`,
+        title: `Les rôles de ${newMember.user.username} ont été modifié !`,
+        desc: `Rôle modifié !`,
         fields: [
             {
-                name: `> Old Roles`,
+                name: `> Ancien Rôle :`,
                 value: `- ${ostring}`
             },
             {
-                name: `> New Roles`,
+                name: `> Nouveau Rôle :`,
                 value: `- ${nstring}`
             },
         ]

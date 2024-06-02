@@ -6,27 +6,27 @@ module.exports = async (client, role, oldPerms, newPerms) => {
     if (!logsChannel) return;
 
     client.embed({
-        title: `🧻・Role permissions updated`,
-        desc: `A role has been updated`,
+        title: `🧻・Permission modifié`,
+        desc: `Les permission d'un rôle ont été modifié`,
         fields: [
             {
                 name: `> Role`,
                 value: `- ${role}`
             },
             {
-                name: `> Before`,
+                name: `> Avant`,
                 value: `- ${new Discord.PermissionsBitField(oldPerms).toArray().toLocaleString().split(',').join(', ') || 'None'}`
             },
             {
-                name: `> After`,
+                name: `> Arpès`,
                 value: `- ${new Discord.PermissionsBitField(newPerms).toArray().toLocaleString().split(',').join(', ') || 'None'}`
             },
             {
-                name: `> ID`,
+                name: `> ID :`,
                 value: `${role.id}`
             },
             {
-                name: `> Timestamp`,
+                name: `> Heure :`,
                 value: `<t:${Math.floor(Date.now() / 1000)}:R>`
             }
         ]

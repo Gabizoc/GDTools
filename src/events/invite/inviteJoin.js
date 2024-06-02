@@ -34,7 +34,7 @@ module.exports = async (client, member, invite, inviter) => {
                     var channel = member.guild.channels.cache.get(channelData.Channel)
 
                     await client.embed({
-                        title: `👋・Welcome`,
+                        title: `👋・Bienvenue !`,
                         desc: joinMessage
                     }, channel).catch(() => { })
                 }
@@ -46,8 +46,8 @@ module.exports = async (client, member, invite, inviter) => {
                     var channel = member.guild.channels.cache.get(channelData.Channel)
 
                     client.embed({
-                        title: `👋・Welcome`,
-                        desc: `I cannot trace how **${member} | ${member.user.tag}** has been joined`
+                        title: `👋・Bienvenue !`,
+                        desc: `Je ne sait pas qui a invité **${member} | **Mais bienvenue **${member.user.tag}** !`
                     }, channel).catch(() => { })
                 }
             })
@@ -84,7 +84,7 @@ module.exports = async (client, member, invite, inviter) => {
                         var channel = member.guild.channels.cache.get(channelData.Channel)
 
                         await client.embed({
-                            title: `👋・Welcome`,
+                            title: `👋・Bienvenue !`,
                             desc: joinMessage
                         }, channel).catch(() => { })
                     }
@@ -97,8 +97,8 @@ module.exports = async (client, member, invite, inviter) => {
                         var channel = member.guild.channels.cache.get(channelData.Channel)
 
                         client.embed({
-                            title: `👋・Welcome`,
-                            desc: `**${member} | ${member.user.tag}** was invited by ${inviter.tag} **(${data.Invites} invites)**`
+                            title: `👋・Bienvenue !`,
+                            desc: `**${member} | ${member.user.tag}** a invité ${inviter.tag}, il a maintenant **(${data.Invites} invites)**`
                         }, channel)
                     }
                 })
@@ -146,7 +146,7 @@ module.exports = async (client, member, invite, inviter) => {
                         var channel = member.guild.channels.cache.get(channelData.Channel)
 
                         await client.embed({
-                            title: `👋・Welcome`,
+                            title: `👋・Bienvenue !`,
                             desc: joinMessage
                         }, channel).catch(() => { })
                     }
@@ -159,8 +159,8 @@ module.exports = async (client, member, invite, inviter) => {
                         var channel = member.guild.channels.cache.get(channelData.Channel)
 
                         await client.embed({
-                            title: `👋・Welcome`,
-                            desc: `**${member} | ${member.user.tag}** was invited by ${inviter.tag} **(1 invites)**`
+                            title: `👋・Bienvenue !`,
+                            desc: `**${member} | ${member.user.tag}** a été invité par ${inviter.tag} il a maintenant **(1 invites)**`
                         }, channel).catch(() => { })
                     }
                 })

@@ -79,11 +79,7 @@ module.exports = async (client, interaction, args) => {
                     value: `_____`,
                     inline: false,
                 },
-                {
-                    name: "🆙┆Uptime",
-                    value: `${duration}`,
-                    inline: true,
-                },
+
                 {
                     name: "⌛┆Vitesse de l'API:",
                     value: `\`${client.ws.ping}\`ms`,

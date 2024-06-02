@@ -10,7 +10,7 @@ module.exports = {
         .addSubcommand(subcommand =>
             subcommand
                 .setName('help')
-                .setDescription('Get information about the sticky messages category commands')
+                .setDescription('Liste les commandes de  sticky messages category commands')
         )
         .addSubcommand(subcommand =>
             subcommand
