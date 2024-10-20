@@ -2,6 +2,7 @@
 # GDTools
 
 Un simple bot multifonction en français.
+Version traduite de : [@CorwinDev](https://github.com/CorwinDev/Discord-Bot)
 
 
 ## Auteur
