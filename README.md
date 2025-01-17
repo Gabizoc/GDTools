@@ -1,4 +1,3 @@
-
 # GDTools
 
 Un simple bot multifonction en français.
@@ -20,11 +19,11 @@ Installation des modules :
 ```
 Configurez le fichier [.env](https://github.com/Gabizoc/GDTools/blob/Main/.env)
 
-Puis démaré le bot :
+Puis démarez le bot :
 ```bash
   node src/index.js
 ```
-ou démaré le script [start.bat](https://github.com/Gabizoc/GDTools/blob/Main/start.bat)
+ou démarez le script [start.bat](https://github.com/Gabizoc/GDTools/blob/Main/start.bat)
     
 ## Clonage
 
